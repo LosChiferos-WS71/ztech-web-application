@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  background: linear-gradient(to bottom left, #276749 53%, white 47%);
+  height: 100%;
+  overflow-y: auto;
+}
