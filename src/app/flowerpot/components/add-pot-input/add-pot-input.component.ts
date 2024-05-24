@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -13,6 +14,8 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './add-pot-input.component.css'
 })
 export class AddPotInputComponent {
+  constructor(private router: Router) {}
+
   input1Value: string = '';
   input2Value: string = '';
   input3Value: string = '';
@@ -29,5 +32,9 @@ export class AddPotInputComponent {
     } else {
         this[inputField] += inputValue.toUpperCase();
     }
+  }
+
+  onSave() {
+    this.router.navigate(['/code/confirmation', "valid"]);
   }
 }
