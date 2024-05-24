@@ -1,0 +1,33 @@
+import { Component } from '@angular/core';
+
+import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+
+@Component({
+  selector: 'app-add-pot-input',
+  standalone: true,
+  imports: [FormsModule, MatFormFieldModule, MatInputModule, MatButtonModule],
+  templateUrl: './add-pot-input.component.html',
+  styleUrl: './add-pot-input.component.css'
+})
+export class AddPotInputComponent {
+  input1Value: string = '';
+  input2Value: string = '';
+  input3Value: string = '';
+  input4Value: string = '';
+  input5Value: string = '';
+
+  soloNumeroLetras(event: any, inputField: 'input1Value' | 'input2Value' | 'input3Value' | 'input4Value' | 'input5Value') {
+    const inputValue = event.key;
+    const isLetterOrNumber: boolean = /^[0-9a-zA-Z]*$/.test(inputValue);
+    const currentValue = this[inputField];
+
+    if (!isLetterOrNumber || currentValue.length >= 1) {
+        event.preventDefault();
+    } else {
+        this[inputField] += inputValue.toUpperCase();
+    }
+  }
+}
