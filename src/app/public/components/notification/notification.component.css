@@ -1,0 +1,41 @@
+.notification-container {
+  background-color: #ededed; /* Fondo gris claro */
+  border: 1px solid #ccc; /* Borde gris */
+  position: fixed;
+  padding: 20px;
+  top: 70px;
+  right: 10px;
+  z-index: 1000;
+  width: 400px; /* Ancho fijo */
+  height: 80vh; /* Altura del 80% de la pantalla */
+  margin: 10px;
+  display: none; /* Oculto por defecto */
+  border-radius: 20px; /* Bordes redondeados */
+}
+
+.notification-container.show {
+  display: block; /* Mostrar cuando se añada la clase 'show' */
+}
+
+.header h2 {
+  font-size: 30px; /* Tamaño de fuente más grande para el encabezado */
+  margin-bottom:20px; /* Espacio entre el encabezado y el contenido */
+}
+
+.footer {
+  position: absolute; /* Posición absoluta */
+  bottom: 20px; /* Distancia de 20px desde la parte inferior */
+  left: 0; /* Alineado a la izquierda */
+  width: 100%; /* Ancho del 100% del contenedor */
+  text-align: center; /* Centrar el texto */
+}
+
+.footer p {
+  margin: 0; /* Eliminar el margen predeterminado del párrafo */
+}
+
+.footer a {
+  color: blue; /* Color del enlace */
+}
+
+
