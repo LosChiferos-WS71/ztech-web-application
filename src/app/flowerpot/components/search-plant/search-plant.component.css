@@ -4,4 +4,33 @@
   grid-row-gap: 20px; 
   grid-column-gap: 50px; /* Espacio entre las tarjetas */
 }
+.custom-search-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.custom-search-icon {
+  color: #888;
+  margin-right: 5px;
+}
+
+.custom-search-input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 5px;
+}
+
+.custom-search-input::placeholder {
+  color: #aaa;
+}
+
+.custom-search-input:focus {
+  border-color: blue;
+}
+
 
