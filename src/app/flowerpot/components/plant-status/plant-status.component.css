@@ -1,0 +1,44 @@
+.status-indicators {
+  display: grid; /* Mantiene la grilla */
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
+  justify-items: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  background-color: rgb(204, 204, 204);
+  padding: 20px;
+  box-shadow: inset 0 -1px 0 #e0e0e0;
+  gap: 10px;
+}
+
+.status-indicators div {
+  display: flex;
+  flex-direction: column; /* Alineación vertical */
+  align-items: center; /* Centra los elementos verticalmente */
+  font-size: 16px;
+}
+
+.status-indicators mat-icon {
+  margin-bottom: 5px; /* Espacio entre el ícono y el número */
+}
+span{
+  font-size: 25px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.image-plant {
+  border-radius: 50px;
+
+  width: 100%;
+  height: 370px;
+  object-fit: fill;
+}
+
+mat-card {
+  background: rgb(204, 204, 204);
+
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-radius: 20px 0 0 20px;
+  overflow: hidden;
+  height: 540px;
+
+}
