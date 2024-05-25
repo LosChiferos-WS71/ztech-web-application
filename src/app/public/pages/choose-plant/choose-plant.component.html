@@ -11,14 +11,23 @@
   
     <div class="search-input">
         <i class="material-icons">search</i>
-        <input type="text" placeholder="Enter the plant you want to search for">
+        <input type="text" placeholder="Enter the plant you want to search for" [(ngModel)]="searchText" (input)="filterPlants()">
     </div>
   
     <div class="flowerpot-container">
-      <app-flowerpot *ngFor="let plant of plants"
+      <ng-container *ngIf="filteredPlants.length > 0;   else noResults">
+        <app-flowerpot *ngFor="let plant of plants"
                      [imageSrc]="plant.imageSrc"
                      [title]="plant.title"
                      [description]="plant.description">
-      </app-flowerpot>
+        </app-flowerpot>
+      </ng-container>
+      <ng-template #noResults>
+        <div class="no-results">
+          <img src="path/to/not-found-image.png" alt="Not Found" class="not-found-image">
+          <p class="not-found-text">No Found</p>
+          <p class="not-found-description">Sorry, the keyword you entered cannot be found. Please check again or search with another keyword.</p>
+        </div>
+      </ng-template>
     </div>
   </div>

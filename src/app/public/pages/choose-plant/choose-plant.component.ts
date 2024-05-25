@@ -1,16 +1,19 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms'; 
 import { ToolbarComponent } from '../../components/toolbar/toolbar.component';
 import { FlowerpotComponent } from '../../../configure-pot/components/flowerpot/flowerpot.component';
 
 @Component({
   selector: 'app-choose-plant',
   standalone: true,
-  imports: [ToolbarComponent, FlowerpotComponent, CommonModule],
+  imports: [ToolbarComponent, FlowerpotComponent, CommonModule, FormsModule],
   templateUrl: './choose-plant.component.html',
   styleUrl: './choose-plant.component.css'
 })
 export class ChoosePlantComponent {
+  searchText: string = '';
+  
   plants = [
     {
       imageSrc: '../../../../assets/ztech/plant1.png',
@@ -73,4 +76,12 @@ export class ChoosePlantComponent {
       description: 'plant 12'
     },
   ];
+
+  filteredPlants = [...this.plants];
+
+  filterPlants() {
+    this.filteredPlants = this.plants.filter(plant =>
+      plant.title.toLowerCase().includes(this.searchText.toLowerCase())
+    );
+  }
 }

@@ -16,16 +16,12 @@ export class FlowerpotComponent implements OnInit {
   @Input() title!: string;
   @Input() description!: string;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog) {}
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(DialogComponent, {
-      width: '200px',
-      height: '100px',
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+    this.dialog.open(DialogComponent, {
+      width: '350px',
+      data: { title: this.title, description: this.description }
     });
   }
 
