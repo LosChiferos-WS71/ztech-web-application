@@ -2,8 +2,10 @@
     display: flex;
     justify-content: center;
     align-items: flex-start; /* Alinea los componentes verticalmente desde el inicio */
-    gap: 20px; /* Espacio entre los componentes */
+    gap: 0px; /* Espacio entre los componentes */
     padding: 20px;
+    margin-top: 100px; /* Agrega un margen superior para evitar que el contenido se superponga con la barra de título */
+
   }
   
   app-plant-status,
@@ -11,9 +13,45 @@
     flex-basis: 48%; /* O usa flex: 1 para dividir el espacio equitativamente */
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Estilo de sombra para dar profundidad */
   }
-  @media (max-width: 768px) {
+  @media (max-width: 1250px) {
     .dashboard {
+      gap: 20px; /* Espacio entre los componentes */
+
       flex-direction: column;
       align-items: center;
     }
   }
+
+  .header {
+    margin-top: 110px; /* Agrega un margen superior para evitar que el contenido se superponga con la barra de título */
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 20px;
+    background-color: transparent; /* Haz el fondo transparente */
+    box-shadow: none; /* Elimina cualquier sombra si no es necesaria */
+    width: 100%;
+    position: absolute; /* Posición absoluta para colocarlo sobre el card */
+    top: 0; /* Alinea al top del viewport o contenedor */
+    left: 0; /* Alinea a la izquierda del viewport o contenedor */
+    z-index: 1000; /* Asegura que está por encima de otros elementos */
+}
+
+
+
+.back-button {
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.icon{
+    font-weight: bold;
+    font-size: 30px;
+
+}
