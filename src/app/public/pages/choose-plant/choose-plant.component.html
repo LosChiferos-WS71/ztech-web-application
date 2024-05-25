@@ -1,0 +1,24 @@
+<app-toolbar/>
+<div class="content">
+    <div class="top-bar">
+      <div class="left-section">
+        <span class="white-text">Configure Flowerpot</span>
+      </div>
+      <div class="right-section">
+        <span class="white-text">Find your plant so you can insert it into your pot.</span>
+      </div>
+    </div>
+  
+    <div class="search-input">
+        <i class="material-icons">search</i>
+        <input type="text" placeholder="Enter the plant you want to search for">
+    </div>
+  
+    <div class="flowerpot-container">
+      <app-flowerpot *ngFor="let plant of plants"
+                     [imageSrc]="plant.imageSrc"
+                     [title]="plant.title"
+                     [description]="plant.description">
+      </app-flowerpot>
+    </div>
+  </div>
