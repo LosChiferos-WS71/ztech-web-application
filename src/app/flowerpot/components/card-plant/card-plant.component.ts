@@ -1,7 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
+import { Router } from '@angular/router';
 
 interface Plant {
+  id: string;  // Asegúrate de que la interfaz Plant tiene un 'id' para la navegación
   name: string;
   description: string;
   image: string;
@@ -15,12 +17,11 @@ interface Plant {
   styleUrls: ['./card-plant.component.css']
 })
 export class CardPlantComponent {
-  @Input() plant!: Plant;  // Usa la interfaz Plant para la propiedad plant
+  @Input() plant!: Plant;
 
-  constructor() { }
+  constructor(private router: Router) {}  // Inyectar Router en el constructor
 
-  ngOnInit(): void {
-    // Puedes añadir lógica de inicialización aquí si es necesario
+  navigateToDetail() {
+    this.router.navigate(['/plant-detail', this.plant.id]);  // Navegación usando el ID de la planta
   }
-
 }

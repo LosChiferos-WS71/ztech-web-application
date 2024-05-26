@@ -1,0 +1,7 @@
+<p>plant-detail works!</p>
+
+<div *ngIf="plant" class="plant-detail-container">
+  <h2>{{ plant.name }}</h2>
+  <img [src]="plant.image" alt="{{ plant.name }}">
+  <p>{{ plant.description }}</p>
+</div>
