@@ -21,7 +21,7 @@ export class DialogComponent {
     this.router.navigate(['/loaded-plant']);
     this.dialogRef.close();
     setTimeout(() => {
-      this.router.navigate(['/choose-plant']);
+      this.router.navigate(['/add-pot']);
     }, 3000);
   }
 }
