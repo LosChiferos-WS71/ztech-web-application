@@ -10,6 +10,8 @@
     margin: 0 auto;
     overflow-y: auto;
     padding-bottom: 20px;
+    min-height: 400px;
+    position: relative;
   }
 
   .app-flowerpot {
@@ -69,4 +71,30 @@
     cursor: pointer;
     pointer-events: none;
     flex-shrink: 0;
+  }
+
+  .no-results {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .not-found-image {
+    width: 150px;
+    margin-bottom: 20px;
+  }
+  
+  .not-found-text {
+    font-size: 38px;
+    font-weight: bold;
+  }
+  
+  .not-found-description {
+    max-width: 400px;
+    font-size: 20px;
+    font-weight: regular;
+    line-height: 1.5;
   }
