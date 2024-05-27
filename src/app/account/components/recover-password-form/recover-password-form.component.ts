@@ -22,7 +22,7 @@ export class RecoverPasswordFormComponent {
 
   recoverPassword() {
     // Logica de verificacion de correo y envio de correo
-    this.router.navigate(['/login']);
+    this.router.navigate(['/recover/password/confirmation', "valid"]);
   }
 
   goToLogin() {
