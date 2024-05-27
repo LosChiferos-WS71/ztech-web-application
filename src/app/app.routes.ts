@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { RecoverPasswordFormComponent } from './account/components/recover-password-form/recover-password-form.component';
+import { RecoverPasswordComponent } from './public/pages/recover-password/recover-password.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: '/recover/password', pathMatch: 'full'},
-    {path: 'recover/password', component: RecoverPasswordFormComponent},
+    {path: 'recover/password', component: RecoverPasswordComponent},
 ];
