@@ -1,0 +1,27 @@
+<div class="profile">
+    <div class="photo">
+        <img src="../../../../assets/profile/profile-icon.png" alt="Photo">
+    </div>
+    <div class="profile-form-container">
+        <mat-form-field appearance="outline" class="input-data">
+            <input matInput placeholder="Name" [(ngModel)]="name" name="name">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="input-data">
+            <input matInput placeholder="Email" [(ngModel)]="email" name="email">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="input-data">
+            <input matInput placeholder="Address" [(ngModel)]="address" name="address">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="input-data">
+            <input matInput placeholder="Birthdate" [(ngModel)]="birthdate" name="birthdate">
+        </mat-form-field>
+        <div class="profile-form-subcontainer">
+            <mat-form-field appearance="outline" class="sub-input">
+                <input matInput placeholder="Gender" [(ngModel)]="gender" name="gender">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="sub-input">
+                <input matInput placeholder="Phone" [(ngModel)]="phone" name="phone">
+            </mat-form-field>
+        </div>
+    </div>
+</div>
