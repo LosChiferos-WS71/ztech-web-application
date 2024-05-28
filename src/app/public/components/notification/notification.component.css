@@ -9,25 +9,30 @@
   width: 400px; /* Ancho fijo */
   height: 80vh; /* Altura del 80% de la pantalla */
   margin: 10px;
-  display: none; /* Oculto por defecto */
+  display: none; /* Cambiado a flex */
+  flex-direction: column; /* Organizar elementos en columna */
   border-radius: 20px; /* Bordes redondeados */
 }
 
 .notification-container.show {
-  display: block; /* Mostrar cuando se añada la clase 'show' */
+  display: flex; /* Mostrar cuando se añada la clase 'show' */
 }
 
 .header h2 {
   font-size: 30px; /* Tamaño de fuente más grande para el encabezado */
-  margin-bottom:20px; /* Espacio entre el encabezado y el contenido */
+  margin-bottom: 20px; /* Espacio entre el encabezado y el contenido */
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto; /* Añadir desplazamiento vertical si el contenido es demasiado grande */
+  padding-right: 20px; /* Espacio a la derecha para el scroll */
 }
 
 .footer {
-  position: absolute; /* Posición absoluta */
-  bottom: 20px; /* Distancia de 20px desde la parte inferior */
-  left: 0; /* Alineado a la izquierda */
-  width: 100%; /* Ancho del 100% del contenedor */
   text-align: center; /* Centrar el texto */
+  padding: 10px 0; /* Espacio interno */
+  margin-top: auto; /* Empujar el footer al final del contenedor */
 }
 
 .footer p {
@@ -37,5 +42,3 @@
 .footer a {
   color: blue; /* Color del enlace */
 }
-
-

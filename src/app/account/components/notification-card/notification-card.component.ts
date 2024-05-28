@@ -1,18 +1,25 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {MatCardModule} from "@angular/material/card";
 import {CommonModule} from "@angular/common";
-
+import { Router } from '@angular/router';
+import {MatIcon} from "@angular/material/icon";
+interface Notification {
+  id: string;
+  title: string;
+  plant: string;
+  day: string;
+}
 @Component({
   selector: 'app-notification-card',
   standalone: true,
-  imports: [MatCardModule, CommonModule],
+    imports: [MatCardModule, CommonModule, MatIcon],
   templateUrl: './notification-card.component.html',
   styleUrl: './notification-card.component.css'
 })
 export class NotificationCardComponent{
-  notifications = [
-    { title: 'Riega tus plantas', message: 'Recuerda regar las plantas hoy.' },
-    { title: 'No te olvides de comprar', message: 'No te olvides de comprar lo que necesitas.' }
-  ];
+
+    @Input() notification!: Notification;
+
+    constructor(private router: Router) {}
 
 }
