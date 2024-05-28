@@ -4,16 +4,19 @@ import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { provideNativeDateAdapter } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-  selector: 'app-profile-form',
+  selector: 'app-edit-profile-form',
   standalone: true,
-  imports: [FormsModule, MatFormFieldModule, MatInputModule, MatButtonModule],
-  templateUrl: './profile-form.component.html',
-  styleUrl: './profile-form.component.css'
+  providers: [provideNativeDateAdapter()],
+  imports: [FormsModule, MatFormFieldModule, MatInputModule, MatDatepickerModule, MatButtonModule],
+  templateUrl: './edit-profile-form.component.html',
+  styleUrl: './edit-profile-form.component.css'
 })
-export class ProfileFormComponent {
+export class EditProfileFormComponent {
   name: string = '';
   email: string = '';
   address: string = '';
@@ -23,7 +26,7 @@ export class ProfileFormComponent {
 
   constructor(private router: Router) {}
 
-  editProfile(): void {
-    this.router.navigate(['/edit/profile']);
+  saveProfile(): void {
+    this.router.navigate(['/profile']);
   }
 }
