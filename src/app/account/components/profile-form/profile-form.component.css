@@ -1,17 +1,15 @@
 .profile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+   margin: 0 auto;
 }
 
 .photo {
   height: 21%;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  height: 270px;
-  width: 270px;
+  height: 170px;
+  width: 170px;
 }
 
 .photo img {
@@ -19,24 +17,45 @@
 }
 
 .profile-form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 450px;
 }
 
 .profile-form-subcontainer {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .input-data {
-    width: 100%;
+  width: 100%;
 }
 
 .sub-input {
-    width: 48%;
+  width: 48%;
+}
+
+.divider {
+  width: 430px;
+  border: 0;
+  height: 2px;
+  background: #000;
+  margin: 20px 0;
+}
+
+.button-style {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  width: 200px;
+  height: 50px;
+  font-size: 16px;
+}
+
+.mat-mdc-raised-button {
+  --mdc-protected-button-container-color: #276749;
+  --mdc-protected-button-label-text-color: white;
 }
 
 ::ng-deep .mdc-text-field--outlined .mdc-notched-outline__leading {
