@@ -8,8 +8,8 @@
 
 .photo {
   height: 21%;
-  height: 170px;
-  width: 170px;
+  height: 150px;
+  width: 150px;
 }
 
 .photo img {
@@ -46,7 +46,6 @@
 }
 
 .button-style {
-  margin-top: 10px;
   margin-bottom: 15px;
   width: 200px;
   height: 50px;
