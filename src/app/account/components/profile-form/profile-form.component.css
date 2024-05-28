@@ -78,6 +78,10 @@
   background-color: #EDEDED !important;
 }
 
+::ng-deep .mdc-text-field--outlined.mdc-text-field--disabled{
+  background-color: #EDEDED !important;
+}
+
 ::ng-deep .mdc-text-field {
   border-radius: 10px !important;
   align-items: center !important;
