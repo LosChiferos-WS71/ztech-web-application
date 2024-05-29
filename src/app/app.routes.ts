@@ -1,11 +1,9 @@
 import { Routes } from '@angular/router';
 import { PlantDetailComponent } from './flowerpot/components/plant-detail/plant-detail.component';
+import { ViewPlantComponent } from './public/pages/view-plant/view-plant.component';
 
 export const routes: Routes = [
-    {
-        path: '',
-        pathMatch: 'full',
-        loadComponent: () => import ('../app/public/pages/view-plant/view-plant.component').then(value => value.ViewPlantComponent)
-    },
-    { path: 'plant-detail/:id', component: PlantDetailComponent },
+    { path: '', redirectTo: 'plant/view', pathMatch: 'full' },
+    { path: 'plant/view', component: ViewPlantComponent },
+    { path: 'plant/detail/:id', component: PlantDetailComponent },
 ];

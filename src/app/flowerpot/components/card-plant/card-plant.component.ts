@@ -22,6 +22,6 @@ export class CardPlantComponent {
   constructor(private router: Router) {}  // Inyectar Router en el constructor
 
   navigateToDetail() {
-    this.router.navigate(['/plant-detail', this.plant.id]);  // Navegación usando el ID de la planta
+    this.router.navigate(['/plant/detail', this.plant.id]);  // Navegación usando el ID de la planta
   }
 }

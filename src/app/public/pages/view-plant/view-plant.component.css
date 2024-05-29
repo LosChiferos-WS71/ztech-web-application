@@ -1,20 +1,34 @@
 .dashboard {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Alinea los componentes verticalmente desde el inicio */
-    gap: 20px; /* Espacio entre los componentes */
-    padding: 20px;
+  display: flex;
+  justify-content: center;
+  grid-column-gap: 200px; /* Espacio entre las tarjetas */
+}
+.plant{
+  margin-left: 20px;
+}
+
+.my-plant, .my-search {
+  flex-direction: column;
+}
+
+app-my-plant,
+app-search-plant {
+  flex-basis: 48%; /* O usa flex: 1 para dividir el espacio equitativamente */
+  padding: 10px; /* Añade padding si es necesario para cada componente */
+}
+
+@media (max-width: 1250px) {
+  .dashboard {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Espacio entre los componentes cuando están en columna */
   }
-  
-  app-plant-status,
-  app-plant-recommendations {
-    flex-basis: 48%; /* O usa flex: 1 para dividir el espacio equitativamente */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Estilo de sombra para dar profundidad */
-  }
-  @media (max-width: 1250px) {
-    .dashboard {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-  
+}
+
+h3 {
+  font-size: 35px; /* Ajusta el tamaño de fuente según Figma */
+  color: white; /* Color verde, ajusta según tu paleta */
+  margin-top: 20px; /* Espacio debajo del título */
+  text-align: left; /* Asegura que el título esté centrado */
+  font-weight: bold; /* Fuente en negrita */
+}
