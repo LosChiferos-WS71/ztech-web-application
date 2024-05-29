@@ -1,0 +1,32 @@
+.space-between-toolbar {
+  margin-top: -120px;
+}
+
+.main-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px;
+}
+
+.section {
+  width: 300px;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.text-large {
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  justify-content: start;
+}
+
+.text-small {
+  font-size: 16px;
+  color: white;
+  margin-top: 20px;
+  display: flex;
+  justify-content: end;
+}
