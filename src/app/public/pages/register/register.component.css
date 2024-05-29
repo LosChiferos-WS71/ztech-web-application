@@ -1,0 +1,62 @@
+.general {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo {
+  height: 21%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 270px;
+  width: 270px;
+}
+
+.logo img {
+  height: 100%;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  line-height: 0.5;
+  margin-bottom: 10px;
+}
+
+.option-p {
+  color: #565656;
+}
+
+.option-a {
+  color: #276749;
+}
+
+@media only screen and (max-width: 540px) {
+  .option-p {
+    color: white;
+  }
+  
+  .option-a {
+    color: black;
+  }
+
+  .logo {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  .divider-space {
+    margin: 0px 20px;
+  }
+
+  body {
+    background: #276749;
+  }
+}
+
+@media only screen and (max-height: 720px) {
+  .section-options {
+    margin-bottom: 15px;
+  }
+}

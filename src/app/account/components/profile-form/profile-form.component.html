@@ -1,0 +1,33 @@
+<div class="profile">
+    <div class="photo">
+        <img src="../../../../assets/profile/profile-icon.png" alt="Photo">
+    </div>
+
+    <hr class="divider">
+
+    <div class="profile-form-container">
+        <mat-form-field appearance="outline" class="input-data">
+            <input matInput placeholder="Name" [(ngModel)]="name" name="name" disabled>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="input-data">
+            <input matInput placeholder="Email" [(ngModel)]="email" name="email" disabled>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="input-data">
+            <input matInput placeholder="Address" [(ngModel)]="address" name="address" disabled>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="input-data">
+            <input matInput placeholder="Birthdate" [(ngModel)]="birthdate" name="birthdate" disabled>
+        </mat-form-field>
+        <div class="profile-form-subcontainer">
+            <mat-form-field appearance="outline" class="sub-input">
+                <input matInput placeholder="Gender" [(ngModel)]="gender" name="gender" disabled>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="sub-input">
+                <input matInput placeholder="Phone" [(ngModel)]="phone" name="phone" disabled>
+            </mat-form-field>
+        </div>
+        <div>
+            <button mat-raised-button class="button-style" (click)="editProfile()">Edit profile</button>
+        </div>
+    </div>
+</div>

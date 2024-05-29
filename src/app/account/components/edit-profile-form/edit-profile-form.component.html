@@ -1,0 +1,35 @@
+<div class="edit-profile">
+    <div class="photo">
+        <img src="../../../../assets/profile/profile-icon.png" alt="Photo">
+    </div>
+
+    <hr class="divider">
+
+    <div class="edit-profile-form-container">
+        <mat-form-field appearance="outline" class="input-data">
+            <input matInput placeholder="Name" [(ngModel)]="name" name="name" >
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="input-data">
+            <input matInput placeholder="Email" [(ngModel)]="email" name="email">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="input-data">
+            <input matInput placeholder="Address" [(ngModel)]="address" name="address">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="input-data">
+            <input matInput placeholder="Birthdate" [(ngModel)]="birthdate" [matDatepicker]="picker" name="birthdate">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <div class="edit-profile-form-subcontainer">
+            <mat-form-field appearance="outline" class="sub-input">
+                <input matInput placeholder="Gender" [(ngModel)]="gender" name="gender">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="sub-input">
+                <input matInput placeholder="Phone" [(ngModel)]="phone" name="phone">
+            </mat-form-field>
+        </div>
+        <div>
+            <button mat-raised-button class="button-style" (click)="saveProfile()">Accept</button>
+        </div>
+    </div>
+</div>

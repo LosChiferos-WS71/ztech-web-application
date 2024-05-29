@@ -1,0 +1,87 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+   margin: 0 auto;
+}
+
+.photo {
+  height: 21%;
+  height: 150px;
+  width: 150px;
+}
+
+.photo img {
+  height: 100%;
+}
+
+.profile-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 450px;
+}
+
+.profile-form-subcontainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.input-data {
+  width: 100%;
+}
+
+.sub-input {
+  width: 48%;
+}
+
+.divider {
+  width: 430px;
+  border: 0;
+  height: 2px;
+  background: #000;
+  margin: 20px 0;
+}
+
+.button-style {
+  margin-bottom: 15px;
+  width: 200px;
+  height: 50px;
+  font-size: 16px;
+}
+
+.mat-mdc-raised-button {
+  --mdc-protected-button-container-color: #276749;
+  --mdc-protected-button-label-text-color: white;
+}
+
+::ng-deep .mdc-text-field--outlined .mdc-notched-outline__leading {
+  border-color: #EDEDED !important;
+  border-top-left-radius: 10px !important;
+  border-bottom-left-radius: 10px !important;
+}
+
+::ng-deep .mdc-text-field--outlined .mdc-notched-outline__notch {
+  border-color: #EDEDED !important;
+}
+
+::ng-deep .mdc-text-field--outlined .mdc-notched-outline__trailing {
+  border-color: #EDEDED !important;
+  border-top-right-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
+}
+
+::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled){
+  background-color: #EDEDED !important;
+}
+
+::ng-deep .mdc-text-field--outlined.mdc-text-field--disabled{
+  background-color: #EDEDED !important;
+}
+
+::ng-deep .mdc-text-field {
+  border-radius: 10px !important;
+  align-items: center !important;
+}

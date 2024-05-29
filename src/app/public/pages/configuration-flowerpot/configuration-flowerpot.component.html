@@ -1,0 +1,27 @@
+<body>
+  <app-toolbar></app-toolbar>
+  
+  <div class="content">
+    <div class="top-bar">
+      <div class="left-section">
+        <span class="white-text">Configure Flowerpot</span>
+      </div>
+      <div class="right-section">
+        <span class="white-text">Choose a name for your pot or plant and continue adding data.</span>
+      </div>
+    </div>
+    <div class="add-flowerpot-content">
+        <div class="centered-container">
+          <div class="image-upload">
+            <img src="../../../../assets/ztech/add-image.png" alt="Add Image" class="image-icon">
+            <p>Add the image for your flowerpot</p>
+          </div>
+        </div>
+        <div class="input-container">
+            <i class="material-icons">local_florist</i>
+            <input type="text" placeholder="Enter the name of the plant or flowerpot.">
+        </div>
+        <button class="save-button" (click)="onSaveClick()">Save</button>
+    </div>
+  </div>
+</body>
