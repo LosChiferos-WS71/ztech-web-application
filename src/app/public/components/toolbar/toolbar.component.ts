@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
-import { RouterLink } from '@angular/router';
-import {NotificationComponent} from "../notification/notification.component";
+import { NotificationComponent } from "../notification/notification.component";
 
 @Component({
   selector: 'app-toolbar',
