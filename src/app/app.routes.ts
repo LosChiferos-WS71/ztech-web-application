@@ -11,6 +11,8 @@ import { ChoosePlantComponent } from './public/pages/choose-plant/choose-plant.c
 import { LoadedPlantComponent } from './public/pages/loaded-plant/loaded-plant.component';
 import { ConfigurationFlowerpotComponent } from './public/pages/configuration-flowerpot/configuration-flowerpot.component';
 import { LoadedPotComponent } from './public/pages/loaded-pot/loaded-pot.component';
+import { FlowerpotDetailComponent } from './public/pages/flowerpot-detail/flowerpot-detail.component';
+import { FlowerpotMetricsComponent } from './public/pages/flowerpot-metrics/flowerpot-metrics.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -20,10 +22,12 @@ export const routes: Routes = [
     { path: 'recover/password/confirmation/:message', component: RecoverPasswordConfirmationComponent },
     { path: 'profile', component: ProfileComponent },
     { path: 'edit/profile', component: EditProfileComponent },
-	{ path: 'add/pot', component: AddPotComponent },
+	  { path: 'add/pot', component: AddPotComponent },
     { path: 'code/confirmation/:message', component: CodeConfirmationComponent },
     { path: 'choose/plant', component: ChoosePlantComponent },
     { path: 'loaded/plant', component: LoadedPlantComponent},
     { path: 'configuration/flowerpot', component: ConfigurationFlowerpotComponent},
-    { path: 'loaded/pot', component: LoadedPotComponent}
+    { path: 'loaded/pot', component: LoadedPotComponent},
+    { path: 'flowerpot/detail', component: FlowerpotDetailComponent },
+    { path: 'flowerpot/metrics', component: FlowerpotMetricsComponent },
 ];
