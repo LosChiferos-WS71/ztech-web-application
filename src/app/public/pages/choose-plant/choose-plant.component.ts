@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'; 
 import { ToolbarComponent } from '../../components/toolbar/toolbar.component';
-import { FlowerpotComponent } from '../../../configure-pot/components/flowerpot/flowerpot.component';
+import { FlowerpotComponent } from '../../../flowerpot/components/flowerpot/flowerpot.component';
 
 @Component({
   selector: 'app-choose-plant',

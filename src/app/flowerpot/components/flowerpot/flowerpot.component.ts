@@ -11,7 +11,7 @@ import { DialogComponent } from '../dialog/dialog.component';
   templateUrl: './flowerpot.component.html',
   styleUrl: './flowerpot.component.css'
 })
-export class FlowerpotComponent implements OnInit {
+export class FlowerpotComponent implements OnInit{
   @Input() imageSrc!: string;
   @Input() title!: string;
   @Input() description!: string;

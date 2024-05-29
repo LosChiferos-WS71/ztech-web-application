@@ -18,10 +18,10 @@ export class DialogComponent {
   }
 
   onYesClick() {
-    this.router.navigate(['/loaded-plant']);
+    this.router.navigate(['/loaded/plant']);
     this.dialogRef.close();
     setTimeout(() => {
-      this.router.navigate(['/add-pot']);
+      this.router.navigate(['/configuration/flowerpot']);
     }, 3000);
   }
 }

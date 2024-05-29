@@ -1,43 +1,43 @@
 .content {
     padding: 20px;
     height: 87.5vh;
-  }
+}
 
-  .top-bar {
+.top-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-  }
+}
   
-  .left-section {
+.left-section {
     flex-grow: 1;
     font-size: 48px;
     font-weight: bold;
     margin-left: 7%;
-  }
+}
 
-  .right-section {
+.right-section {
     font-size: 24px;
     font-weight: bold;
     margin-right: 7%;
     align-content: center;
-  }
+}
   
-  .white-text {
+.white-text {
     color: white;
-  }
+}
 
-  .add-flowerpot-content {
+.add-flowerpot-content {
     margin-top: 200px;
     flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  }
+}
   
-  .centered-container {
+.centered-container {
     text-align: center;
     background-color: #ffffff;
     padding: 20px;
@@ -45,18 +45,18 @@
     width: 20%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
-  }
+}
   
-  .image-upload {
+.image-upload {
     margin-bottom: 20px;
-  }
+}
   
-  .image-icon {
+.image-icon {
     width: 100px;
     margin-bottom: 10px;
-  }
+}
   
-  .input-container {
+.input-container {
     display: flex;
   align-items: center;
   justify-content: center;
@@ -66,24 +66,24 @@
   margin-bottom: 20px;
   padding: 10px;
   width: 20%;
-  }
+}
   
-  .input-container i {
+.input-container i {
     padding: 8px;
     font-size: 20px;
     color: gray;
-  }
+}
   
-  .input-container input {
+.input-container input {
     flex-grow: 1;
     padding: 8px;
     font-size: 14px;
     border: none;
     outline: none;
     background: transparent;
-  }
+}
   
-  .save-button {
+.save-button {
     background-color: #276749;
     color: white;
     border: none;
@@ -93,9 +93,8 @@
     font-weight: bold;
     cursor: pointer;
     width: 25%;
-  }
+}
   
-  .save-button:hover {
+.save-button:hover {
     background-color: #1e5038;
-  }
-  
+}
