@@ -1,0 +1,24 @@
+<mat-card>
+  <mat-card-content>
+    <div class="plant-image-container">
+      <img class="image-plant" src="https://content.elmueble.com/medio/2019/03/25/monstera_f97f4746_800x800.jpg">
+    </div>
+    <div class="status-indicators">
+      <div>
+        <mat-icon [ngStyle]="{'color': getColor(values.temperature)}">thermostat</mat-icon>
+        <span [ngStyle]="{'color': getColor(values.temperature)}">{{ values.temperature }}°</span>
+        <span [ngStyle]="{'color': getColor(values.temperature)}">High</span>
+      </div>
+      <div>
+        <mat-icon [ngStyle]="{'color': getColor(values.humidity)}">opacity</mat-icon>
+        <span [ngStyle]="{'color': getColor(values.humidity)}">{{ values.humidity }}%</span>
+        <span [ngStyle]="{'color': getColor(values.humidity)}">High</span>
+      </div>
+      <div>
+        <mat-icon [ngStyle]="{'color': getColor(values.uv)}">wb_sunny</mat-icon>
+        <span [ngStyle]="{'color': getColor(values.uv)}">{{ values.uv }} UV</span>
+        <span [ngStyle]="{'color': getColor(values.uv)}">High</span>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

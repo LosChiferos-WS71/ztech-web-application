@@ -1,0 +1,28 @@
+mat-card {
+    background: rgb(204, 204, 204);
+    color: black;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 0 20px 20px 0;
+    font-family: 'Arial', sans-serif;
+    height: 540px;
+    width: 600px; /* Ajusta este valor según el diseño de tu página */
+
+    max-width: 800px; /* Máximo ancho que puede tener el card */
+
+  }
+
+  h4{
+    font-weight: bold;
+  }
+  
+.footer-icons p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0;
+  }
+  
+  .mat-icon {
+    color: red;
+    margin-right: 10px;
+  }
