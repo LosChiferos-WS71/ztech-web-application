@@ -14,6 +14,6 @@ export class PlantRecommendationsComponent {
   constructor(private router: Router) { }
 
   navigateMetrics():void{
-    this.router.navigate(['/flowerpot-metrics']);
+    this.router.navigate(['/flowerpot/metrics']);
   }
 }

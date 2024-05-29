@@ -1,16 +1,8 @@
 import { Routes } from '@angular/router';
+import { FlowerpotDetailComponent } from './public/pages/flowerpot-detail/flowerpot-detail.component';
+import { FlowerpotMetricsComponent } from './public/pages/flowerpot-metrics/flowerpot-metrics.component';
 
 export const routes: Routes = [
-    {
-        path: '',
-        pathMatch: 'full',
-        loadComponent: () => import ('../app/public/pages/flowerpot-detail/flowerpot-detail.component').then(value => value.FlowerpotDetailComponent)
-
-    },
-    {
-        path: 'flowerpot-metrics',
-        loadComponent: () => import ('../app/public/pages/flowerpot-metrics/flowerpot-metrics.component').then(value => value.FlowerpotMetricsComponent)
-
-    },
-    
+    { path: 'flowerpot/detail', component: FlowerpotDetailComponent },
+    { path: 'flowerpot/metrics', component: FlowerpotMetricsComponent },
 ];
