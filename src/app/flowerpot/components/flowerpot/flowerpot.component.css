@@ -1,0 +1,18 @@
+.flowerpot-card {
+  max-width: 400px;
+  margin: 10px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+}
+
+mat-card-content h2 {
+  margin-top: 10px;
+}
+
+mat-card-content p {
+  margin-top: 5px;
+}

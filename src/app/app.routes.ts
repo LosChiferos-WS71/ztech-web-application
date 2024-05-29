@@ -7,6 +7,10 @@ import { ProfileComponent } from './public/pages/profile/profile.component';
 import { EditProfileComponent } from './public/pages/edit-profile/edit-profile.component';
 import { AddPotComponent } from './public/pages/add-pot/add-pot.component';
 import { CodeConfirmationComponent } from './public/pages/code-confirmation/code-confirmation.component';
+import { ChoosePlantComponent } from './public/pages/choose-plant/choose-plant.component';
+import { LoadedPlantComponent } from './public/pages/loaded-plant/loaded-plant.component';
+import { ConfigurationFlowerpotComponent } from './public/pages/configuration-flowerpot/configuration-flowerpot.component';
+import { LoadedPotComponent } from './public/pages/loaded-pot/loaded-pot.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -17,5 +21,9 @@ export const routes: Routes = [
     { path: 'profile', component: ProfileComponent },
     { path: 'edit/profile', component: EditProfileComponent },
 	{ path: 'add/pot', component: AddPotComponent },
-    { path: 'code/confirmation/:message', component: CodeConfirmationComponent }
+    { path: 'code/confirmation/:message', component: CodeConfirmationComponent },
+    { path: 'choose/plant', component: ChoosePlantComponent },
+    { path: 'loaded/plant', component: LoadedPlantComponent},
+    { path: 'configuration/flowerpot', component: ConfigurationFlowerpotComponent},
+    { path: 'loaded/pot', component: LoadedPotComponent}
 ];

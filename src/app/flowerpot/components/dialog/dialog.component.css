@@ -1,0 +1,49 @@
+dialog-container {
+  text-align: center;
+  padding: 10px;
+  background: transparent;
+  
+}
+
+h1 {
+  font-size: 1.5em;
+  background-color: #276749;
+  border-radius: 15px;
+  font-size: 28px;
+  color: white;
+  padding: 10px;  
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  background-color: transparent;
+}
+
+.yes-button {
+  background-color: #276749;
+  width: 45%;
+  height: 60px;
+  color: #FFFFFF !important;
+  border-radius: 15px;
+  font-size: 28px;
+}
+
+.no-button {
+  background-color: #F05959;
+  width: 45%;
+  height: 60px;
+  color: #FFFFFF !important;
+  border-radius: 15px;
+  font-size: 28px;
+}
+
+.yes-button:hover, .no-button:hover {
+  opacity: 0.8;
+}
+
+.mat-dialog-container {
+  background: transparent !important;
+  box-shadow: none !important;
+}

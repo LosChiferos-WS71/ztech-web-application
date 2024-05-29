@@ -1,0 +1,28 @@
+body{
+  background: #276749;
+}
+
+.general {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: -20px;
+}
+
+.logo {
+  height: 350px;
+  width: 350px;
+}
+
+.logo img {
+  height: 100%;
+}
+
+.text {
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+  margin-top: 60px;
+}
