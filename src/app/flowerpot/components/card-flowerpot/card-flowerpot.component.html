@@ -1,12 +1,17 @@
-<mat-card class="flowerpot-card" (click)="navigateToDetail()">
-  <div class="img-container">
-    <img mat-card-image [src]="flowerpot.image" [alt]="flowerpot.name">
-  </div>
-  <div class="icons-container">
-    <mat-card-content>
-      <mat-icon [ngClass]="getTemperatureClass()">thermostat</mat-icon>
-      <mat-icon [ngClass]="getHumidityClass()">water</mat-icon>
-      <mat-icon [ngClass]="getSunlightClass()">brightness_high</mat-icon>
-    </mat-card-content>
-  </div>
-</mat-card>
+<div class="component-section">
+    <mat-card class="flowerpot-card" (click)="navigateToDetail()">
+    <div class="img-container">
+        <img mat-card-image [src]="flowerpot.image" [alt]="flowerpot.name">
+    </div>
+    <div class="icons-container">
+        <mat-card-content>
+        <mat-icon [ngClass]="getTemperatureClass()">thermostat</mat-icon>
+        <mat-icon [ngClass]="getHumidityClass()">water</mat-icon>
+        <mat-icon [ngClass]="getSunlightClass()">brightness_high</mat-icon>
+        </mat-card-content>
+    </div>
+    </mat-card>
+    <div class="text-section">
+        <p>{{flowerpot.name.toUpperCase()}}</p>
+    </div>
+</div>
