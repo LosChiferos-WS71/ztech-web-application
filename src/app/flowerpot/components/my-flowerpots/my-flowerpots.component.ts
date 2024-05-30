@@ -1,18 +1,22 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 import { CardFlowerpotComponent } from '../card-flowerpot/card-flowerpot.component';
 
 @Component({
   selector: 'app-my-flowerpots',
   standalone: true,
-  imports: [CommonModule, CardFlowerpotComponent],
+  imports: [CommonModule, CardFlowerpotComponent, MatButtonModule, MatIconModule],
   templateUrl: './my-flowerpots.component.html',
   styleUrl: './my-flowerpots.component.css'
 })
 export class MyFlowerpotsComponent {
   flowerpots = [
-    {
+    /*{
       id: '1',
       name: 'Basil',
       image: 'https://img.freepik.com/vector-gratis/planta-maceta-dibujos-animados_1308-107212.jpg',
@@ -51,6 +55,16 @@ export class MyFlowerpotsComponent {
       temperatureValue: 20,
       humidityValue: 50,
       sunlightValue: 60
-    }
+    }*/
   ];
+
+  constructor(private router: Router) {}
+
+  goToAnotherComponent() {
+    this.router.navigate(['/add/pot']);
+  }
+
+  isFlowerpotsEmpty(): boolean {
+    return this.flowerpots.length === 0;
+  }
 }
