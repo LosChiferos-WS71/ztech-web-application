@@ -1,0 +1,13 @@
+.flowerpot-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 20px; 
+    grid-column-gap: 10px;
+    justify-content: center;
+    align-items: start;
+}
+
+.flowerpot-grid > div {
+    display: flex;
+    justify-content: center;
+}
