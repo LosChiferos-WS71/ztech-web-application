@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { MyFlowerpotsComponent } from './flowerpot/components/my-flowerpots/my-flowerpots.component';
+import { FlowerpotsListComponent } from './public/pages/flowerpots-list/flowerpots-list.component';
 
 export const routes: Routes = [
-    { path: '', redirectTo: '/my/flowerpots', pathMatch: 'full' },
-    { path: 'my/flowerpots', component: MyFlowerpotsComponent}
+    { path: '', redirectTo: '/flowerpots/list', pathMatch: 'full' },
+    { path: 'flowerpots/list', component: FlowerpotsListComponent}
 ];
