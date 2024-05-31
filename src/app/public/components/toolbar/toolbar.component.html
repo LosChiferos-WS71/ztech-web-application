@@ -1,15 +1,15 @@
 <mat-toolbar style="background-color: #363636;">
-  <mat-toolbar-row class="navigation-links">
-    <img src="../../../assets/ztech/Logo-bar.png" alt="Img logo bar">
-    <span class="name">ZTECH</span>
-    <span class="example-spacer"></span>
-    <span class="navigation-link" [routerLink]="''">Flowerpots</span>
-    <span class="navigation-link" [routerLink]="''">Add</span>
-    <span class="navigation-link">Plants</span>
-    <span class="navigation-link">Profile</span>
-    <button mat-icon-button aria-label="notifications icon-button" style="color: white;" (click)="toggleNotifications()">
-      <mat-icon>notifications</mat-icon>
-    </button>
-  </mat-toolbar-row>
+    <mat-toolbar-row class="navigation-links">
+        <img src="../../../assets/ztech/Logo-bar.png" alt="Img logo bar">
+        <span class="name">ZTECH</span>
+        <span class="example-spacer"></span>
+        <span class="navigation-link" [routerLink]= "['/flowerpots/list']">Flowerpots</span>
+        <span class="navigation-link" [routerLink]= "['/add/pot']">Add</span>
+        <span class="navigation-link" [routerLink]="['/plant/view']">Plants</span>
+        <span class="navigation-link" [routerLink]= "['/profile']">Profile</span>
+        <button mat-icon-button aria-label="notifications icon-button" style="color: white;" (click)="toggleNotifications()">
+            <mat-icon>notifications</mat-icon>
+        </button>
+    </mat-toolbar-row>
 </mat-toolbar>
 <app-notification></app-notification>

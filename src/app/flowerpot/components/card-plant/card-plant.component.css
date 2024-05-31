@@ -1,0 +1,49 @@
+.plant-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ccc; 
+  border-radius: 15px; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 130px;
+  
+  overflow: hidden; 
+}
+
+.img-container {
+  width: 100%;
+  height: 110px; 
+  overflow: hidden; 
+
+  border-radius: 15px;
+}
+
+img[mat-card-image] {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.text-container {
+  height: 45px; 
+  background-color: #ccc;
+  text-align: center;
+  flex-direction: column; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+mat-card-title {
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: -10px; 
+}
+
+mat-card-subtitle {
+  color: black;
+  font-size: 12px;
+  font-style: italic;
+}

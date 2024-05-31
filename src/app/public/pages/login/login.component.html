@@ -1,0 +1,21 @@
+<body>
+    <div class="general">
+        <div class="logo">
+            <img src="../../../../assets/ztech/logo-ztech-without-background.png" alt="Logo">
+        </div>
+    
+        <app-login-form></app-login-form>
+        
+        <div class="section-options">
+            <div class="option">
+                <p class="option-first-p">You do not have an account?</p>
+                <a class="option-first-a" [routerLink]= "['/register']">Enter here</a>
+            </div>
+            <mat-divider vertical="true" class="divider-space"></mat-divider>
+            <div class="option">
+                <p class="option-second-p">Forgot password?</p>
+                <a class="option-second-a" [routerLink]= "['/recover/password']">Enter here</a>
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,67 @@
+.plant-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 20px; 
+  grid-column-gap: 50px; /* Espacio entre las tarjetas */
+}
+
+
+.custom-search-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 3px;
+  border-radius: 15px;
+  background-color: white;
+  width: 300px;
+}
+
+.mat-icon {
+  color: #888;
+  margin: 5px;
+}
+
+.custom-search-input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 7px;
+}
+
+.custom-search-input::placeholder {
+  color: #aaa;
+}
+
+.custom-search-input:focus {
+  border-color: blue;
+}
+
+.no-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  margin-top: 20px;
+}
+
+.no-results img {
+  width: 45%; /* Ajusta el tamaño según tus necesidades */
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.no-results p {
+  font-size: 16px;
+
+  color: #666;
+  margin: 5px 0; /* Ajusta el margen entre el título y el subtítulo */
+}
+
+.no-results .subtext {
+  font-size: 14px;
+  color: #888;
+  text-align: center; /* Centrado del subtítulo */
+  max-width: 60%; /* Limita el ancho del subtítulo */
+}
+

@@ -1,0 +1,96 @@
+.register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.container-main-text {
+  margin-bottom: 10px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-size: 1.2em;
+}
+
+.input-data {
+  width: 280px;
+  height: 100%;
+}
+
+.button-style {
+  margin-top: 12px;
+  margin-bottom: 15px;
+  width: 100%;
+  height: 56px;
+  font-size: 16px;
+}
+
+.mat-mdc-raised-button {
+  --mdc-protected-button-container-color: #276749;
+  --mdc-protected-button-label-text-color: white;
+}
+
+::ng-deep .mdc-text-field--outlined .mdc-notched-outline__leading {
+  border-color: #EDEDED !important;
+  border-top-left-radius: 10px !important;
+  border-bottom-left-radius: 10px !important;
+}
+
+::ng-deep .mdc-text-field--outlined .mdc-notched-outline__notch {
+  border-color: #EDEDED !important;
+}
+
+::ng-deep .mdc-text-field--outlined .mdc-notched-outline__trailing {
+  border-color: #EDEDED !important;
+  border-top-right-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
+}
+
+::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled){
+  background-color: #EDEDED !important;
+}
+
+::ng-deep .mdc-text-field {
+  border-radius: 10px !important;
+  align-items: center !important;
+}
+
+::ng-deep .mat-mdc-checkbox.mat-primary .mdc-checkbox .mdc-checkbox__native-control:enabled:checked ~ .mdc-checkbox__background, 
+.mat-mdc-checkbox.mat-primary .mdc-checkbox .mdc-checkbox__native-control:enabled:indeterminate ~ .mdc-checkbox__background,
+.mat-mdc-checkbox.mat-primary .mdc-checkbox .mdc-checkbox__native-control[data-indeterminate-true]:enabled ~ .mdc-checkbox_background {
+  border-color: transparent !important;
+  background-color: #276749;
+}
+
+@media only screen and (max-width: 540px) {
+  .container-main-text {
+    display: none;
+  }
+
+  .button-style {
+    margin-bottom: 20px;
+  }
+
+  .mat-mdc-raised-button {
+    --mdc-protected-button-container-color: white;
+    --mdc-protected-button-label-text-color: black;
+  }
+
+  ::ng-deep .mat-mdc-checkbox.mat-primary .mdc-checkbox .mdc-checkbox__native-control:enabled:checked ~ .mdc-checkbox__background, 
+  .mat-mdc-checkbox.mat-primary .mdc-checkbox .mdc-checkbox__native-control:enabled:indeterminate ~ .mdc-checkbox__background,
+  .mat-mdc-checkbox.mat-primary .mdc-checkbox .mdc-checkbox__native-control[data-indeterminate-true]:enabled ~ .mdc-checkbox_background {
+    border-color: black !important;
+    background-color: #276749;
+  }
+}
+
+@media only screen and (max-height: 720px) {
+
+}

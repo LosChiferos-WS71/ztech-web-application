@@ -1,0 +1,145 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 80%;
+  height: max-content;
+  margin: auto;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.left-column, .right-column {
+  flex: 1;
+}
+
+.left-column {
+  text-align: center;
+  justify-content: center;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.img-container {
+  width: 100%;
+  height: 450px; 
+  overflow: hidden; 
+  border-radius: 15px;
+}
+
+img[mat-card-image] {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.left-column button {
+  width: 90%;            /* Establece el ancho del botón a 70% del contenedor */
+  background-color: #276749;  /* Un verde intenso */
+  color: white;
+  border: none;
+  padding: 15px;
+  margin-top: 20px;      /* Espacio arriba del botón */
+  margin-bottom: 20px;   /* Espacio abajo del botón */
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 100px;
+  display: block;        /* Asegura que el botón sea un bloque para aplicar el margen automáticamente */
+  margin-left: auto;     /* Centra el botón horizontalmente */
+  margin-right: auto;    /* Centra el botón horizontalmente */
+}
+
+.info-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* Divide el espacio igualmente entre dos columnas */
+  gap: 10px;               /* Espacio entre elementos */
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+  width: 90%;              /* Ajusta el ancho de info-box al 90% del contenedor */
+  margin-left: auto;       /* Centra info-box horizontalmente */
+  margin-right: auto;      /* Centra info-box horizontalmente */
+}
+
+.info-box div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: #276749;  /* Fondo verde para cada elemento de info-box */
+  color: white;               /* Texto blanco para buena visibilidad */
+  border-radius: 20px;
+}
+
+.icon {
+  margin-right: 5px;
+}
+
+.right-column h1, .right-column h2 {
+  color: #276749;
+}
+
+.parameters .card {
+  background-color: #276749;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.right-column h1 {
+  font-size: 32px;        /* Tamaño grande para el título */
+  color: #276749;        /* Color verde oscuro, similar al del botón */
+  margin-top: 25px;      /* Reduce el espacio debajo del título */
+  font-weight: bold;     /* Hacer el título más bold */
+  text-align: center;
+}
+
+.right-column h2 {
+  font-size: 24px;        /* Tamaño menor para el subtítulo */
+  color: #333;           /* Gris oscuro para el subtítulo */
+  font-weight: normal;   /* Peso normal para diferenciar del título */
+  text-align: center;
+  margin-top: -5px;
+  font-style: italic;
+}
+
+.right-column h3 {
+  font-size: 18px;        /* Tamaño adecuado para los encabezados de secciones */
+  color: #276749;        /* Mantener coherencia de color con otros elementos */
+  font-weight: bold;     /* Bold para destacar las secciones */
+}
+
+.recomentaion {
+  margin-bottom: -8px;
+}
+
+p, li {
+  font-size: 16px;       /* Tamaño estándar para texto normal */
+  color: #666;           /* Gris claro para el texto normal, mejora la legibilidad */
+  line-height: 1.6;      /* Espaciado de línea para mejorar la legibilidad */
+  margin-right: 20px;
+
+}
+
+
+.parameters .card {
+  background-color: white;  /* Color de fondo suave para las tarjetas */
+  padding: 15px;              /* Padding generoso para el contenido interno */
+  border-radius: 20px;        /* Bordes redondeados para suavizar la estética */
+  margin-right: 20px;
+}
+
+.parameters .card h4 {
+  font-size: 16px;             /* Tamaño adecuado para encabezados dentro de tarjetas */
+  color: #276749;              /* Color verde oscuro para encabezados de tarjetas */
+  margin: -5px 0 3px;      /* Espacio mínimo alrededor del texto para evitar la sensación de aglomeración */
+  font-weight: bold;
+}
+
+.parameters .card p {
+  margin: -5px 0;               /* Espacio mínimo alrededor del texto para evitar la sensación de aglomeración */
+}

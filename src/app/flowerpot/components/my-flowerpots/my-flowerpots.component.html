@@ -1,0 +1,15 @@
+<div *ngIf="isFlowerpotsEmpty(); else nonEmptyList">
+  <div class="empty-list">
+    <button mat-fab color="primary" (click)="goToAnotherComponent()">
+        <mat-icon>add</mat-icon>
+    </button>
+    <p>Add your first flowerpot!!!</p>
+  </div>
+</div>
+<ng-template #nonEmptyList>
+  <div class="flowerpot-grid">
+    <div *ngFor="let flowerpot of flowerpots">
+      <app-card-flowerpot [flowerpot]="flowerpot"></app-card-flowerpot>
+    </div>
+  </div>
+</ng-template>

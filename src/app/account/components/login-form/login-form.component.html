@@ -1,0 +1,28 @@
+<div class="login">
+    <div>
+        <div class="form">
+            <div class="container-main-text">
+                <p style="font-size: 32px; font-weight: bold; line-height: 1; color: white;">
+                    Log in to your account
+                </p>
+            </div>
+            <mat-form-field appearance="outline" class="input-data">
+                <mat-icon matPrefix style="color: #939393; display: flex; align-items: center;">mail</mat-icon>
+                <input matInput placeholder="Email" [(ngModel)]="email" name="email">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="input-data">
+                <mat-icon matPrefix style="color: #939393;">lock</mat-icon>
+                <input matInput [(ngModel)]="password" name="password" #passwordInput placeholder="Password" type="password">
+                <button mat-icon-button matSuffix (click)="togglePasswordVisibility(passwordInput)" [attr.aria-label]="'Toggle password visibility'" style="color: #939393;">
+                  <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+              </button>
+            </mat-form-field>
+            <section>
+                <mat-checkbox color="primary">Remember me</mat-checkbox>
+            </section>
+        </div>
+        <div>
+            <button mat-raised-button class="button-style" (click)="login()">Login</button>
+        </div>
+    </div>
+</div>

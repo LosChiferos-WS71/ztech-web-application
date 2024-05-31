@@ -1,0 +1,38 @@
+.content {
+  padding: 20px;
+  height: 87.5vh;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.left-section {
+  flex-grow: 1;
+  font-size: 48px;
+  font-weight: bold;
+  margin-left: 7%;
+}
+
+.right-section {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 7%;
+  align-content: center;
+}
+
+.white-text {
+  color: white;
+}
+
+.add-flowerpot-content {
+  margin-top: 200px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

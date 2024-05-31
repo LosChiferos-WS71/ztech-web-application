@@ -1,0 +1,11 @@
+<mat-card class="plant-card" (click)="navigateToDetail()">
+  <div class="img-container">
+    <img mat-card-image [src]="plant.image" [alt]="plant.name">
+  </div>
+  <div class="text-container">
+    <mat-card-content>
+      <mat-card-title>{{ plant.name }}</mat-card-title>
+      <mat-card-subtitle>{{ plant.description }}</mat-card-subtitle>
+    </mat-card-content>
+  </div>
+</mat-card>

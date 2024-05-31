@@ -1,0 +1,24 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>Tea I recommend:</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list >
+        <mat-list-item>
+          <mat-icon class="error">error</mat-icon>Control the temperature, humidity, and amount of sunlight in your plant.
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon class="warning">warning</mat-icon>At 3pm you have to remove your plant from the sun.
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon class="eco">eco</mat-icon>Remember to buy organic fertilizer for your plant and save the eggshells to provide calcium to them.
+        </mat-list-item>
+      </mat-list>
+      
+      
+    </mat-card-content>
+    <div class="button-list">
+      <button mat-raised-button (click)="navigateMetrics()" color="primary">See stats</button>
+      <button mat-raised-button color="accent" (click)="changePlant()">Change of plant</button>
+    </div>
+  </mat-card>

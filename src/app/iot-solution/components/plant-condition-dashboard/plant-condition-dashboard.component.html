@@ -1,0 +1,36 @@
+<mat-card>
+    <mat-card-content>
+      <div class="chart-container">
+        <h4>Temperature</h4>
+        <apx-chart
+          [series]="chartTemperature.series"
+          [chart]="chartTemperature.chart"
+          [colors]="chartTemperature.colors">
+        </apx-chart>
+      </div>
+      <div class="chart-container">
+        <h4>Humidity</h4>
+        <apx-chart
+          [series]="chartHumidity.series"
+          [chart]="chartHumidity.chart"
+          [colors]="chartHumidity.colors">
+        </apx-chart>
+      </div>
+      <div class="chart-container">
+        <h4>UV Index</h4>
+        <apx-chart
+          [series]="chartUV.series"
+          [chart]="chartUV.chart"
+          [colors]="chartUV.colors">
+        </apx-chart>
+      </div>
+            <!-- Aquí añadirás los párrafos con los iconos como se requiera -->
+
+      <!-- Aquí añadirás los párrafos con los iconos como se requiera -->
+      <div class="footer">
+        <p><mat-icon>notifications</mat-icon> Lorem ipsum dolor sit amet...</p>
+        <p><mat-icon>notifications</mat-icon> Consectetur adipiscing elit...</p>
+        <p><mat-icon>notifications</mat-icon> Sed do eiusmod tempor incididunt...</p>
+      </div>
+    </mat-card-content>
+</mat-card>
