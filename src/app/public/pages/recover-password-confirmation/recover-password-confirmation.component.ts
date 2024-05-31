@@ -24,7 +24,7 @@ export class RecoverPasswordConfirmationComponent implements OnInit{
     });
 
     setTimeout(() => {
-      this.router.navigate(['/add/pot']);
+      this.router.navigate(['/login']);
     }, 3000);
   }
 }

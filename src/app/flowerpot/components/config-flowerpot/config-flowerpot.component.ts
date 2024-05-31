@@ -15,7 +15,7 @@ export class ConfigFlowerpotComponent {
   onSaveClick() {
     this.router.navigate(['/loaded/pot']);
     setTimeout(() => {
-      this.router.navigate(['/choose/plant']);
+      this.router.navigate(['/flowerpots/list']);
     }, 3000);
   }
 }

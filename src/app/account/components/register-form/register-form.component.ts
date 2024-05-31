@@ -29,6 +29,6 @@ export class RegisterFormComponent {
   }
 
   registerUser(): void {
-    this.router.navigate(['']);
+    this.router.navigate(['/flowerpots/list']);
   }
 }

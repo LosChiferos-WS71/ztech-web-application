@@ -8,25 +8,25 @@
             </div>
             <mat-form-field appearance="outline" class="input-data">
                 <mat-icon matPrefix style="color: #939393; display: flex; align-items: center;">person</mat-icon>
-                <input [(ngModel)]="name" matInput placeholder="Nombres y Apellidos">
+                <input [(ngModel)]="name" matInput placeholder="Name and lastname">
             </mat-form-field>
             <mat-form-field appearance="outline" class="input-data">
                 <mat-icon matPrefix style="color: #939393; display: flex; align-items: center;">mail</mat-icon>
-                <input [(ngModel)]="email" matInput placeholder="Correo">
+                <input [(ngModel)]="email" matInput placeholder="Email">
             </mat-form-field>
             <mat-form-field appearance="outline" class="input-data">
                 <mat-icon matPrefix style="color: #939393; display: flex; align-items: center;">lock</mat-icon>
-                <input [(ngModel)]="password" matInput #passwordInput placeholder="Contraseña" type="password">
+                <input [(ngModel)]="password" matInput #passwordInput placeholder="Password" type="password">
                 <button mat-icon-button matSuffix (click)="togglePasswordVisibility(passwordInput)" [attr.aria-label]="'Toggle password visibility'" style="color: #939393;">
                   <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
                 </button>
             </mat-form-field>
             <section>
-                <mat-checkbox color="primary">Recuérdame</mat-checkbox>
+                <mat-checkbox color="primary">Remember me</mat-checkbox>
             </section>
         </div>
         <div>
-            <button mat-raised-button class="button-style" (click)="registerUser()">Registrar</button>
+            <button mat-raised-button class="button-style" (click)="registerUser()">Register</button>
         </div>
     </div>
 </div>

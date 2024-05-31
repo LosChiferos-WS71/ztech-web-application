@@ -29,6 +29,6 @@ export class LoginFormComponent {
   }
 
   login(): void {
-    this.router.navigate(['']);
+    this.router.navigate(['/flowerpots/list']);
   }
 }

@@ -24,7 +24,13 @@ export class CodeConfirmationComponent implements OnInit{
     });
 
     setTimeout(() => {
-      this.router.navigate(['/add/pot']);
+      this.route.params.subscribe(params => {
+        if (params['message'] === 'invalid') {
+          this.router.navigate(['/add/pot']);
+        } else if (params['message'] === 'valid') {
+          this.router.navigate(['/choose/plant']);
+        }
+      });
     }, 3000);
   }
 }

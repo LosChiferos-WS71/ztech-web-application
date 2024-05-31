@@ -15,7 +15,6 @@ export class FlowerpotDetailComponent {
   constructor(private router: Router) {}
 
   onBack(): void {
-    this.router.navigate(['']); // Asegúrate de tener la ruta correcta
+    this.router.navigate(['/flowerpots/list']);
   }
-//https://apexcharts.com/
 }

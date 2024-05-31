@@ -15,6 +15,6 @@ export class FlowerpotMetricsComponent {
   constructor(private router: Router) {}
 
   onBack(): void {
-    this.router.navigate(['']); // Asegúrate de tener la ruta correcta
+    this.router.navigate(['/flowerpot/detail']); // Asegúrate de tener la ruta correcta
   }
 }

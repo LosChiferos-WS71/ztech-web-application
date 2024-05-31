@@ -16,7 +16,7 @@ import { CardFlowerpotComponent } from '../card-flowerpot/card-flowerpot.compone
 })
 export class MyFlowerpotsComponent {
   flowerpots = [
-    /*{
+    {
       id: '1',
       name: 'Basil',
       image: 'https://img.freepik.com/vector-gratis/planta-maceta-dibujos-animados_1308-107212.jpg',
@@ -55,7 +55,7 @@ export class MyFlowerpotsComponent {
       temperatureValue: 20,
       humidityValue: 50,
       sunlightValue: 60
-    }*/
+    }
   ];
 
   constructor(private router: Router) {}

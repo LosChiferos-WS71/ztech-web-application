@@ -16,4 +16,8 @@ export class PlantRecommendationsComponent {
   navigateMetrics():void{
     this.router.navigate(['/flowerpot/metrics']);
   }
+
+  changePlant():void{
+    this.router.navigate(['/choose/plant']);
+  }
 }
