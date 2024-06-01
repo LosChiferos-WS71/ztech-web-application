@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 import { ToolbarComponent } from '../../components/toolbar/toolbar.component';
-import { WelcomeUserComponent } from '../../../account/components/welcome-user/welcome-user.component';
-import { MyFlowerpotsComponent } from '../../../flowerpot/components/my-flowerpots/my-flowerpots.component';
+import { WelcomeUserComponent } from '../../../profile/components/welcome-user/welcome-user.component';
+import { MyFlowerpotsComponent } from '../../../loan/components/my-flowerpots/my-flowerpots.component';
 
 @Component({
   selector: 'app-flowerpots-list',

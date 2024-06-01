@@ -3,7 +3,7 @@ import { RouterLink } from '@angular/router';
 
 import { MatDividerModule } from '@angular/material/divider';
 
-import { LoginFormComponent } from '../../../account/components/login-form/login-form.component';
+import { LoginFormComponent } from '../../../profile/components/login-form/login-form.component';
 
 @Component({
   selector: 'app-login',

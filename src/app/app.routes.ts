@@ -14,7 +14,7 @@ import { ConfigurationFlowerpotComponent } from './public/pages/configuration-fl
 import { LoadedPotComponent } from './public/pages/loaded-pot/loaded-pot.component';
 import { FlowerpotDetailComponent } from './public/pages/flowerpot-detail/flowerpot-detail.component';
 import { FlowerpotMetricsComponent } from './public/pages/flowerpot-metrics/flowerpot-metrics.component';
-import { PlantDetailComponent } from './flowerpot/components/plant-detail/plant-detail.component';
+import { PlantDetailComponent } from './pot/components/plant-detail/plant-detail.component';
 import { ViewPlantComponent } from './public/pages/view-plant/view-plant.component';
 
 export const routes: Routes = [

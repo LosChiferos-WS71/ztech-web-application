@@ -3,7 +3,7 @@ import { RouterLink } from '@angular/router';
 
 import { MatDividerModule } from '@angular/material/divider';
 
-import { RegisterFormComponent } from '../../../account/components/register-form/register-form.component';
+import { RegisterFormComponent } from '../../../profile/components/register-form/register-form.component';
 
 @Component({
   selector: 'app-register',
