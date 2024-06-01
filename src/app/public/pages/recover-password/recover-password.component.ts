@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { RecoverPasswordFormComponent } from '../../../account/components/recover-password-form/recover-password-form.component';
+import { RecoverPasswordFormComponent } from '../../../profile/components/recover-password-form/recover-password-form.component';
 
 @Component({
   selector: 'app-recover-password',

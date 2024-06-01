@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { ToolbarComponent } from '../../components/toolbar/toolbar.component';
-import { ProfileFormComponent } from '../../../account/components/profile-form/profile-form.component';
+import { ProfileFormComponent } from '../../../profile/components/profile-form/profile-form.component';
 
 @Component({
   selector: 'app-profile',
