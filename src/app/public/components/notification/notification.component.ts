@@ -1,11 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {NotificationCardComponent} from "../../../account/components/notification-card/notification-card.component";
+import {NotificationCardComponent} from '../../../loan/components/notification-card/notification-card.component';
 import {CommonModule} from "@angular/common";
 import {MatInputModule} from "@angular/material/input";
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule} from "@angular/material/form-field";
 import {FormsModule} from "@angular/forms";
 import {MatIconModule} from "@angular/material/icon";
-import {NotificationGroupComponent} from "../../../account/components/notification-group/notification-group.component";
+import {NotificationGroupComponent} from '../../../loan/components/notification-group/notification-group.component';
+
 interface Notification {
     id: string;
     title: string;

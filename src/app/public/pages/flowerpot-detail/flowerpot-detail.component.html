@@ -1,15 +1,16 @@
 <body>
   <app-toolbar></app-toolbar>
-  <div class="header">
-    <div class="back-button" >
-      <mat-icon class="icon" (click)="onBack()">arrow_back</mat-icon>
-    </div>
-    <div class="title">FLOWERPOT 1</div>
-  </div>
+
   <div class="main-content">
-  <div class="dashboard">
-    <app-plant-status></app-plant-status>
-    <app-plant-recommendations></app-plant-recommendations>
-  </div>
+    <div class="header">
+      <div class="back-button">
+        <mat-icon class="icon" (click)="onBack()">arrow_back</mat-icon>
+      </div>
+      <div class="title">FLOWERPOT 1</div>
+    </div>
+    <div class="dashboard">
+      <app-plant-status></app-plant-status>
+      <app-plant-recommendations></app-plant-recommendations>
+    </div>
   </div>
 </body>

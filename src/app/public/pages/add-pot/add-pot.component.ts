@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { ToolbarComponent } from '../../components/toolbar/toolbar.component';
-import { AddPotInputComponent } from '../../../flowerpot/components/add-pot-input/add-pot-input.component';
+import { AddPotInputComponent } from '../../../loan/components/add-pot-input/add-pot-input.component';
 
 @Component({
   selector: 'app-add-pot',
