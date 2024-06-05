@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ToolbarComponent } from '../../components/toolbar/toolbar.component';
-import { PlantStatusComponent } from '../../../loan/components/plant-status/plant-status.component';
+import { PlantStatusComponent } from '../../../pot/components/plant-status/plant-status.component';
 import { PlantConditionDashboardComponent } from '../../../pot/components/plant-condition-dashboard/plant-condition-dashboard.component';
 import {MatIconModule} from '@angular/material/icon';
 import { Router } from '@angular/router';
