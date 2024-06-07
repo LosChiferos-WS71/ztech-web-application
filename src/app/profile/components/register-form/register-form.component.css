@@ -32,6 +32,13 @@
   font-size: 16px;
 }
 
+.error-message {
+  display: flex;
+  justify-content: center;
+  color: red;
+  margin-top: 10px;
+}
+
 .mat-mdc-raised-button {
   --mdc-protected-button-container-color: #276749;
   --mdc-protected-button-label-text-color: white;
