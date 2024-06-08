@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { AuthService } from '../../../shared/services/auth.service';
+import { FlowerpotService } from '../../../pot/services/flowerpot.service';
 
 @Component({
   selector: 'app-add-pot-input',
@@ -14,7 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './add-pot-input.component.css'
 })
 export class AddPotInputComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: AuthService, private flowerpotService: FlowerpotService) {}
 
   input1Value: string = '';
   input2Value: string = '';
@@ -35,6 +37,15 @@ export class AddPotInputComponent {
   }
 
   onSave() {
-    this.router.navigate(['/code/confirmation', "valid"]);
+    const code = this.input1Value + this.input2Value + this.input3Value + this.input4Value + this.input5Value;
+
+    this.flowerpotService.getFlowerpotByCode(code).subscribe(
+      (flowerpot) => {
+        this.authService.setFlowerpot(flowerpot?.id);
+        this.router.navigate(['/code/confirmation', "valid"]);
+      },
+      (error) => {
+        this.router.navigate(['/code/confirmation', "invalid"]);
+      });
   }
 }

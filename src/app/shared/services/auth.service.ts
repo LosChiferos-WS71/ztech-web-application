@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
   private currentUserKey = "currentUser";
+  private currentflowerpotId = "currentflowerpotId"
 
   constructor(private router: Router, private auth: Auth) { }
 
@@ -18,6 +19,18 @@ export class AuthService {
     const userJson = localStorage.getItem(this.currentUserKey);
     if(userJson){
       return JSON.parse(userJson);
+    }
+    return null;
+  }
+
+  setFlowerpot(flowerpot: any) {
+    localStorage.setItem(this.currentflowerpotId, JSON.stringify(flowerpot))
+  }
+
+  getFlowerpot() {
+    const flowerpot = localStorage.getItem(this.currentflowerpotId);
+    if(flowerpot) {
+      return flowerpot;
     }
     return null;
   }
@@ -40,6 +53,7 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem(this.currentUserKey);
+    localStorage.removeItem(this.currentflowerpotId);
     return signOut(this.auth);
   }
 }

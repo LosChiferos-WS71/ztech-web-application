@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment.development';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { catchError, retry, throwError } from 'rxjs';
+import { Observable, catchError, retry, throwError } from 'rxjs';
+import { GetFlowerpot } from '../models/flowerpot.model';
 
 @Injectable({
   providedIn: 'root'
@@ -31,7 +32,7 @@ export class FlowerpotService {
     return throwError(() => ({ status: error.status, message: error.error.message }))
   }
 
-  getFlowerpotByCode(code: string) {
+  getFlowerpotByCode(code: string): Observable<any> {
     return this.http
       .post(`${this.baseUrl}/code`, code, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
