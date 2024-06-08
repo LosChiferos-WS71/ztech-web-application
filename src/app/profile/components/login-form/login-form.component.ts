@@ -34,10 +34,11 @@ export class LoginFormComponent {
 
   login(): void {
     this.plantOwnerService.getPlantOwnerByEmail(this.email).subscribe(
-      () => {
+      (response) => {
         this.authService.login({email: this.email, password: this.password})
           .then(() => {
             this.router.navigate(['/flowerpots/list']);
+            this.authService.setUser(response);
           })
           .catch(error => {
             this.errorMessage = "Incorrect password. Please try again."

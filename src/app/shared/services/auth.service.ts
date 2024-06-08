@@ -39,7 +39,7 @@ export class AuthService {
   }
 
   logout() {
-    //localStorage.removeItem(this.currentUserKey);
+    localStorage.removeItem(this.currentUserKey);
     return signOut(this.auth);
   }
 }
