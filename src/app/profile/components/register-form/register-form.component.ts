@@ -49,7 +49,7 @@ export class RegisterFormComponent {
       () => {
         this.plantOwnerService.register({ email: this.email, password: this.password })
           .then(() => {
-            this.router.navigate(['/flowerpots/list']);
+            this.router.navigate(['/login']);
           })
           .catch(error => {
             this.errorMessage = error.message;

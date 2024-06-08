@@ -17,23 +17,27 @@ import { FlowerpotMetricsComponent } from './public/pages/flowerpot-metrics/flow
 import { PlantDetailComponent } from './pot/components/plant-detail/plant-detail.component';
 import { ViewPlantComponent } from './public/pages/view-plant/view-plant.component';
 
+import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
+
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
+
 export const routes: Routes = [
-    { path: '', redirectTo: '/login', pathMatch: 'full' },
+    { path: '', redirectTo: '/flowerpots/list', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'recover/password', component: RecoverPasswordComponent },
     { path: 'recover/password/confirmation/:message', component: RecoverPasswordConfirmationComponent },
-    { path: 'flowerpots/list', component: FlowerpotsListComponent},
-    { path: 'profile', component: ProfileComponent },
-    { path: 'edit/profile', component: EditProfileComponent },
-	{ path: 'add/pot', component: AddPotComponent },
-    { path: 'code/confirmation/:message', component: CodeConfirmationComponent },
-    { path: 'choose/plant', component: ChoosePlantComponent },
-    { path: 'loaded/plant', component: LoadedPlantComponent},
-    { path: 'configuration/flowerpot', component: ConfigurationFlowerpotComponent},
-    { path: 'loaded/pot', component: LoadedPotComponent},
-    { path: 'flowerpot/detail', component: FlowerpotDetailComponent },
-    { path: 'flowerpot/metrics', component: FlowerpotMetricsComponent },
-    { path: 'plant/view', component: ViewPlantComponent },
-    { path: 'plant/detail/:id', component: PlantDetailComponent },
+    { path: 'flowerpots/list', component: FlowerpotsListComponent, ...canActivate(redirectUnauthorizedToLogin)},
+    { path: 'profile', component: ProfileComponent, ...canActivate(redirectUnauthorizedToLogin) },
+    { path: 'edit/profile', component: EditProfileComponent, ...canActivate(redirectUnauthorizedToLogin) },
+	{ path: 'add/pot', component: AddPotComponent, ...canActivate(redirectUnauthorizedToLogin) },
+    { path: 'code/confirmation/:message', component: CodeConfirmationComponent, ...canActivate(redirectUnauthorizedToLogin) },
+    { path: 'choose/plant', component: ChoosePlantComponent, ...canActivate(redirectUnauthorizedToLogin) },
+    { path: 'loaded/plant', component: LoadedPlantComponent, ...canActivate(redirectUnauthorizedToLogin) },
+    { path: 'configuration/flowerpot', component: ConfigurationFlowerpotComponent, ...canActivate(redirectUnauthorizedToLogin) },
+    { path: 'loaded/pot', component: LoadedPotComponent, ...canActivate(redirectUnauthorizedToLogin) },
+    { path: 'flowerpot/detail', component: FlowerpotDetailComponent, ...canActivate(redirectUnauthorizedToLogin) },
+    { path: 'flowerpot/metrics', component: FlowerpotMetricsComponent, ...canActivate(redirectUnauthorizedToLogin) },
+    { path: 'plant/view', component: ViewPlantComponent, ...canActivate(redirectUnauthorizedToLogin) },
+    { path: 'plant/detail/:id', component: PlantDetailComponent, ...canActivate(redirectUnauthorizedToLogin) },
 ];
