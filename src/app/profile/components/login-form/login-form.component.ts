@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { Auth } from '@angular/fire/auth';
 import { PlantOwnerService } from '../../services/plant-owner.service';
+import { AuthService } from '../../../shared/services/auth.service';
 
 @Component({
   selector: 'app-login-form',
@@ -24,7 +25,7 @@ export class LoginFormComponent {
   password: string = '';
   errorMessage: string = '';
 
-  constructor(private router: Router, private auth: Auth, private plantOwnerService: PlantOwnerService) {}
+  constructor(private router: Router, private authService: AuthService, private plantOwnerService: PlantOwnerService) {}
 
   togglePasswordVisibility(input: HTMLInputElement): void {
     input.type = this.hide ? 'text' : 'password';
@@ -34,7 +35,7 @@ export class LoginFormComponent {
   login(): void {
     this.plantOwnerService.getPlantOwnerByEmail(this.email).subscribe(
       () => {
-        this.plantOwnerService.login({ email: this.email, password: this.password })
+        this.authService.login({email: this.email, password: this.password})
           .then(() => {
             this.router.navigate(['/flowerpots/list']);
           })

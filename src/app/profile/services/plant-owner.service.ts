@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from '@angular/fire/auth';
 import { environment } from '../../../environments/environment.development';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { catchError, retry, throwError } from 'rxjs';
@@ -12,7 +11,7 @@ export class PlantOwnerService {
 
   baseUrl = environment.api + "plant/owners"
 
-  constructor(private auth: Auth, private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -31,14 +30,6 @@ export class PlantOwnerService {
       );
     }
     return throwError(() => ({ status: error.status, message: error.error.message }))
-  }
-
-  register({email, password}: any) {
-    return createUserWithEmailAndPassword(this.auth, email, password);
-  }
-
-  login({email, password}: any) {
-    return signInWithEmailAndPassword(this.auth, email, password);
   }
 
   createPlantOwner(plantOwner: SendPlantOwner) {

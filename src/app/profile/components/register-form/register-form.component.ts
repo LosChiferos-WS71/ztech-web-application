@@ -11,6 +11,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { PlantOwnerService } from '../../services/plant-owner.service';
 import { SendPlantOwner } from '../../models/plant-owner.model';
+import { AuthService } from '../../../shared/services/auth.service';
 
 @Component({
   selector: 'app-register-form',
@@ -26,7 +27,7 @@ export class RegisterFormComponent {
   password: string = '';
   errorMessage: string = '';
 
-  constructor(private router: Router, private plantOwnerService: PlantOwnerService) {}
+  constructor(private router: Router, private authService: AuthService , private plantOwnerService: PlantOwnerService) {}
 
   togglePasswordVisibility(input: HTMLInputElement): void {
     input.type = this.hide ? 'text' : 'password';
@@ -47,7 +48,7 @@ export class RegisterFormComponent {
 
     this.plantOwnerService.createPlantOwner(plantOwner).subscribe(
       () => {
-        this.plantOwnerService.register({ email: this.email, password: this.password })
+        this.authService.register({email: this.email, password: this.password})
           .then(() => {
             this.router.navigate(['/login']);
           })
