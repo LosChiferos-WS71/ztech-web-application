@@ -12,8 +12,8 @@ import { DialogComponent } from '../dialog/dialog.component';
   styleUrl: './flowerpot.component.css'
 })
 export class FlowerpotComponent implements OnInit{
-  @Input() imageSrc!: string;
-  @Input() title!: string;
+  @Input() photo!: string;
+  @Input() name!: string;
   @Input() description!: string;
 
   constructor(public dialog: MatDialog) {}
@@ -21,7 +21,7 @@ export class FlowerpotComponent implements OnInit{
   openDialog(): void {
     this.dialog.open(DialogComponent, {
       width: '350px',
-      data: { title: this.title, description: this.description }
+      data: { name: this.name }
     });
   }
 

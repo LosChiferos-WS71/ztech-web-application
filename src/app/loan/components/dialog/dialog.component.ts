@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { PlantTypeService } from '../../../pot/services/plant-type.service';
+import { AuthService } from '../../../shared/services/auth.service';
 
 @Component({
   selector: 'app-dialog',
@@ -11,17 +13,26 @@ import { Router } from '@angular/router';
   styleUrl: './dialog.component.css'
 })
 export class DialogComponent {
-  constructor(public dialogRef: MatDialogRef<DialogComponent>, private router: Router) {}
+  constructor(public dialogRef: MatDialogRef<DialogComponent>, private router: Router, @Inject(MAT_DIALOG_DATA) public data:{ name: string }, private plantTypeService: PlantTypeService, private authService: AuthService) {}
 
   onNoClick(): void {
     this.dialogRef.close();
   }
 
   onYesClick() {
-    this.router.navigate(['/loaded/plant']);
-    this.dialogRef.close();
-    setTimeout(() => {
-      this.router.navigate(['/configuration/flowerpot']);
-    }, 3000);
+    this.plantTypeService.getPlantTypeByName(this.data.name).subscribe(
+      (plantType) => {
+        this.authService.setPlantType(plantType.id);
+        this.router.navigate(['/loaded/plant']);
+        this.dialogRef.close();
+        setTimeout(() => {
+          this.router.navigate(['/configuration/flowerpot']);
+        }, 3000);
+        console.log(this.authService.getPlantType());
+      },
+      (error) => {
+        console.log('Error fetching plant type by name: ', error);
+      }
+    );
   }
 }

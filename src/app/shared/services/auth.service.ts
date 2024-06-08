@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 export class AuthService {
   private currentUserKey = "currentUser";
   private currentflowerpotId = "currentflowerpotId"
+  private currentplantTypeId = "currentplantTypeId"
 
   constructor(private router: Router, private auth: Auth) { }
 
@@ -35,6 +36,18 @@ export class AuthService {
     return null;
   }
 
+  setPlantType(plantType: any) {
+    localStorage.setItem(this.currentplantTypeId, JSON.stringify(plantType))
+  }
+
+  getPlantType() {
+    const plantType = localStorage.getItem(this.currentplantTypeId);
+    if(plantType) {
+      return plantType;
+    }
+    return null;
+  }
+
   register({email, password}: any) {
     return createUserWithEmailAndPassword(this.auth, email, password);
   }
@@ -54,6 +67,7 @@ export class AuthService {
   logout() {
     localStorage.removeItem(this.currentUserKey);
     localStorage.removeItem(this.currentflowerpotId);
+    localStorage.removeItem(this.currentplantTypeId);
     return signOut(this.auth);
   }
 }
