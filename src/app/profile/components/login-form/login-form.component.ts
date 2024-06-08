@@ -8,6 +8,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { Auth } from '@angular/fire/auth';
+import { PlantOwnerService } from '../../services/plant-owner.service';
 
 @Component({
   selector: 'app-login-form',
@@ -20,8 +22,9 @@ export class LoginFormComponent {
   hide = true;
   email: string = '';
   password: string = '';
+  errorMessage: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private auth: Auth, private plantOwnerService: PlantOwnerService) {}
 
   togglePasswordVisibility(input: HTMLInputElement): void {
     input.type = this.hide ? 'text' : 'password';
@@ -29,6 +32,19 @@ export class LoginFormComponent {
   }
 
   login(): void {
-    this.router.navigate(['/flowerpots/list']);
+    this.plantOwnerService.getPlantOwnerByEmail(this.email).subscribe(
+      () => {
+        this.plantOwnerService.login({ email: this.email, password: this.password })
+          .then(() => {
+            this.router.navigate(['/flowerpots/list']);
+          })
+          .catch(error => {
+            this.errorMessage = "Incorrect password. Please try again."
+          });
+      },
+      error => {
+        this.errorMessage = "Account with this email does not exist. Please register."
+      }
+    );
   }
 }

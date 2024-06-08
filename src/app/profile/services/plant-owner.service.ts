@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword } from '@angular/fire/auth';
+import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from '@angular/fire/auth';
 import { environment } from '../../../environments/environment.development';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { catchError, retry, throwError } from 'rxjs';
@@ -37,9 +37,19 @@ export class PlantOwnerService {
     return createUserWithEmailAndPassword(this.auth, email, password);
   }
 
+  login({email, password}: any) {
+    return signInWithEmailAndPassword(this.auth, email, password);
+  }
+
   createPlantOwner(plantOwner: SendPlantOwner) {
     return this.http
       .post(`${this.baseUrl}`, JSON.stringify(plantOwner), this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
+  getPlantOwnerByEmail(email: string) {
+    return this.http
+      .post(`${this.baseUrl}/email`, email, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
 }
