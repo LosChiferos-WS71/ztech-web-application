@@ -28,7 +28,6 @@ export class DialogComponent {
         setTimeout(() => {
           this.router.navigate(['/configuration/flowerpot']);
         }, 3000);
-        console.log(this.authService.getPlantType());
       },
       (error) => {
         console.log('Error fetching plant type by name: ', error);

@@ -43,7 +43,6 @@ export class AddPotInputComponent {
       (flowerpot) => {
         this.authService.setFlowerpot(flowerpot?.id);
         this.router.navigate(['/code/confirmation', "valid"]);
-        console.log(this.authService.getFlowerpot());
       },
       (error) => {
         this.router.navigate(['/code/confirmation', "invalid"]);

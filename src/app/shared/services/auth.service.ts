@@ -31,7 +31,7 @@ export class AuthService {
   getFlowerpot() {
     const flowerpot = localStorage.getItem(this.currentflowerpotId);
     if(flowerpot) {
-      return flowerpot;
+      return parseInt(flowerpot, 10);
     }
     return null;
   }
@@ -43,7 +43,7 @@ export class AuthService {
   getPlantType() {
     const plantType = localStorage.getItem(this.currentplantTypeId);
     if(plantType) {
-      return plantType;
+      return parseInt(plantType, 10);
     }
     return null;
   }
@@ -62,6 +62,11 @@ export class AuthService {
     }).catch((error) => { 
       return error.message;
     });
+  }
+
+  finishFlowerpotAssigment() {
+    localStorage.removeItem(this.currentflowerpotId);
+    localStorage.removeItem(this.currentplantTypeId);
   }
 
   logout() {

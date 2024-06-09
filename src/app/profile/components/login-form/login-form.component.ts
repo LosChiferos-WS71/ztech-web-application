@@ -8,7 +8,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { Auth } from '@angular/fire/auth';
 import { PlantOwnerService } from '../../services/plant-owner.service';
 import { AuthService } from '../../../shared/services/auth.service';
 
