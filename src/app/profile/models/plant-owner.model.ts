@@ -1,4 +1,4 @@
-export interface SendPlantOwner {
+export interface PlantOwnerRequest {
     name: string,
     email: string,
     address: string,
@@ -9,7 +9,7 @@ export interface SendPlantOwner {
     gender: string
 }
 
-export interface GetPlantOwner {
+export interface PlantOwnerResponse {
     id: number,
     name: string,
     email: string,

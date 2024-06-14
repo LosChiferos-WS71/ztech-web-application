@@ -10,7 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { PlantOwnerService } from '../../services/plant-owner.service';
-import { SendPlantOwner } from '../../models/plant-owner.model';
+import { PlantOwnerRequest } from '../../models/plant-owner.model';
 import { AuthService } from '../../../shared/services/auth.service';
 
 @Component({
@@ -35,7 +35,7 @@ export class RegisterFormComponent {
   }
 
   registerUser(): void {
-    const plantOwner: SendPlantOwner = {
+    const plantOwnerRequest: PlantOwnerRequest = {
       name: this.name,
       email: this.email,
       address: "",
@@ -46,7 +46,7 @@ export class RegisterFormComponent {
       gender: ""
     };
 
-    this.plantOwnerService.createPlantOwner(plantOwner).subscribe(
+    this.plantOwnerService.createPlantOwner(plantOwnerRequest).subscribe(
       () => {
         this.authService.register({email: this.email, password: this.password})
           .then(() => {

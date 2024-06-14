@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment.development';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { catchError, retry, throwError } from 'rxjs';
-import { SendPlantOwner } from '../models/plant-owner.model';
+import { PlantOwnerRequest } from '../models/plant-owner.model';
 
 @Injectable({
   providedIn: 'root'
@@ -32,9 +32,9 @@ export class PlantOwnerService {
     return throwError(() => ({ status: error.status, message: error.error.message }))
   }
 
-  createPlantOwner(plantOwner: SendPlantOwner) {
+  createPlantOwner(plantOwnerRequest: PlantOwnerRequest) {
     return this.http
-      .post(`${this.baseUrl}`, JSON.stringify(plantOwner), this.httpOptions)
+      .post(`${this.baseUrl}`, plantOwnerRequest, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
 
