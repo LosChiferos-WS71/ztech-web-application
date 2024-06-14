@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { FlowerpotAssigmentService } from './flowerpot-assigment.service';
+import { FlowerpotAssignmentService } from './flowerpot-assignment.service';
 
 describe('FlowerpotAssigmentService', () => {
-  let service: FlowerpotAssigmentService;
+  let service: FlowerpotAssignmentService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(FlowerpotAssigmentService);
+    service = TestBed.inject(FlowerpotAssignmentService);
   });
 
   it('should be created', () => {

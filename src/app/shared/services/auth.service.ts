@@ -64,7 +64,7 @@ export class AuthService {
     });
   }
 
-  finishFlowerpotAssigment() {
+  finishFlowerpotAssignment() {
     localStorage.removeItem(this.currentflowerpotId);
     localStorage.removeItem(this.currentplantTypeId);
   }

@@ -1,4 +1,4 @@
-export interface SendFlowerpotAssigment {
+export interface FlowerpotAssignmentRequest {
     plantOwnerId: number,
     flowerpotId: number,
     plantTypeId: number,
@@ -8,11 +8,7 @@ export interface SendFlowerpotAssigment {
     endDate: string
 }
 
-export interface GetFlowerpotAssigment {
-    id: number,
-    plantOwnerId: number,
-    flowerpotId: number,
-    plantTypeId: number,
+export interface FlowerpotAssignmentResponse {
     name: string,
     photo: string,
     startDate: string,

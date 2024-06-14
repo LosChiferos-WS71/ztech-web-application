@@ -6,8 +6,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { AuthService } from '../../../shared/services/auth.service';
-import { FlowerpotAssigmentService } from '../../services/flowerpot-assigment.service';
-import { SendFlowerpotAssigment } from '../../models/flowerpot-assigment.model';
+import { FlowerpotAssignmentService } from '../../services/flowerpot-assignment.service';
+import { FlowerpotAssignmentRequest } from '../../models/flowerpot-assignment.model';
 import { Storage, getDownloadURL, ref, uploadBytesResumable } from '@angular/fire/storage';
 import { Observable, Subject } from 'rxjs';
 
@@ -23,7 +23,7 @@ export class ConfigFlowerpotComponent {
   image!: File;
   downloadURL$ = new Subject<string>();
 
-  constructor(private router: Router, private authService: AuthService, private flowerpotAssigmentService: FlowerpotAssigmentService, private storage: Storage, private ngZone: NgZone) {}
+  constructor(private router: Router, private authService: AuthService, private flowerpotAssignmentService: FlowerpotAssignmentService, private storage: Storage, private ngZone: NgZone) {}
 
   onImageSelected(event: any) {
     const imageSelected: File = event.target.files[0];
@@ -75,7 +75,7 @@ export class ConfigFlowerpotComponent {
     if (this.image) {
       this.uploadImage(this.image);
       this.downloadURL$.subscribe(url => {
-        const flowerpotAssigment: SendFlowerpotAssigment = {
+        const flowerpotAssignmentRequest: FlowerpotAssignmentRequest = {
           plantOwnerId: this.authService.getUser().id,
           flowerpotId: this.authService.getFlowerpot()!,
           plantTypeId: this.authService.getPlantType()!,
@@ -85,9 +85,9 @@ export class ConfigFlowerpotComponent {
           endDate: ""
         };
 
-        this.flowerpotAssigmentService.createFlowerpotAssigment(flowerpotAssigment).subscribe(
+        this.flowerpotAssignmentService.createFlowerpotAssignment(flowerpotAssignmentRequest).subscribe(
           () => {
-            this.authService.finishFlowerpotAssigment();
+            this.authService.finishFlowerpotAssignment();
             this.ngZone.run(() => {
               this.router.navigate(['/loaded/pot']);
               setTimeout(() => {
@@ -101,7 +101,7 @@ export class ConfigFlowerpotComponent {
         );
       });
     } else {
-      const flowerpotAssigment: SendFlowerpotAssigment = {
+      const flowerpotAssignmentRequest: FlowerpotAssignmentRequest = {
         plantOwnerId: this.authService.getUser().id,
         flowerpotId: this.authService.getFlowerpot()!,
         plantTypeId: this.authService.getPlantType()!,
@@ -111,9 +111,9 @@ export class ConfigFlowerpotComponent {
         endDate: ""
       };
 
-      this.flowerpotAssigmentService.createFlowerpotAssigment(flowerpotAssigment).subscribe(
+      this.flowerpotAssignmentService.createFlowerpotAssignment(flowerpotAssignmentRequest).subscribe(
         () => {
-          this.authService.finishFlowerpotAssigment();
+          this.authService.finishFlowerpotAssignment();
           this.ngZone.run(() => {
             this.router.navigate(['/loaded/pot']);
             setTimeout(() => {

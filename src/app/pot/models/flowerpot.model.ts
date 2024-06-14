@@ -1,4 +1,4 @@
-export interface SendFlowerpot {
+export interface FlowerpotRequest {
     code: string,
     active: boolean,
     lastTemprature: number,
@@ -6,7 +6,7 @@ export interface SendFlowerpot {
     lastSunlight: number
 }
 
-export interface GetFlowerpot {
+export interface FlowerpotResponse {
     id: number,
     code: string,
     active: boolean,
