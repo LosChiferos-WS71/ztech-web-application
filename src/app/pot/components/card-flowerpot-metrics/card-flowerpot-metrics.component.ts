@@ -21,14 +21,15 @@ export class CardFlowerpotMetricsComponent implements OnInit{
   ngOnInit() {
     this.flowerpotService.getFlowerpotById(this.flowerpotId).subscribe((data) => {
       this.flowerpot = data;
+      console.log(this.flowerpot);
     });
   }
 
   getTemperatureClass(): string {
-    const value = this.flowerpot.lastTemprature;
-    if (value < 15) {
+    const temperatureValue = this.flowerpot.lastTemperature;
+    if (temperatureValue < 15) {
       return 'temperature-low';
-    } else if (value >= 15 && value <= 25) {
+    } else if (temperatureValue >= 15 && temperatureValue <= 25) {
       return 'temperature-medium';
     } else {
       return 'temperature-high';
@@ -36,10 +37,10 @@ export class CardFlowerpotMetricsComponent implements OnInit{
   }
 
   getHumidityClass(): string {
-    const value = this.flowerpot.lastHumidity;
-    if (value < 30) {
+    const humidityValue = this.flowerpot.lastHumidity;
+    if (humidityValue < 30) {
       return 'humidity-low';
-    } else if (value >= 30 && value <= 60) {
+    } else if (humidityValue >= 30 && humidityValue <= 60) {
       return 'humidity-medium';
     } else {
       return 'humidity-high';
@@ -47,10 +48,10 @@ export class CardFlowerpotMetricsComponent implements OnInit{
   }
 
   getSunlightClass(): string {
-    const value = this.flowerpot.lastHumidity;
-    if (value < 30) {
+    const sunlightValue = this.flowerpot.lastSunlight;
+    if (sunlightValue < 30) {
       return 'sunlight-low';
-    } else if (value >= 30 && value <= 70) {
+    } else if (sunlightValue >= 30 && sunlightValue <= 70) {
       return 'sunlight-medium';
     } else {
       return 'sunlight-high';

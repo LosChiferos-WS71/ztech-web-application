@@ -12,7 +12,7 @@ mat-icon {
 }
 
 .temperature-medium {
-  color: orange;
+  color: green;
 }
 
 .temperature-high {
@@ -20,25 +20,25 @@ mat-icon {
 }
 
 .humidity-low {
-  color: lightblue;
-}
-
-.humidity-medium {
   color: blue;
 }
 
+.humidity-medium {
+  color: green;
+}
+
 .humidity-high {
-  color: darkblue;
+  color: red;
 }
 
 .sunlight-low {
-  color: yellow;
+  color: blue;
 }
 
 .sunlight-medium {
-  color: gold;
+  color: green;
 }
 
 .sunlight-high {
-  color: darkorange;
+  color: red;
 }

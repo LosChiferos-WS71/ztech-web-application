@@ -10,7 +10,7 @@ export interface FlowerpotResponse {
     id: number,
     code: string,
     active: boolean,
-    lastTemprature: number,
+    lastTemperature: number,
     lastHumidity: number,
     lastSunlight: number
 }
