@@ -19,10 +19,10 @@ import { FlowerpotAssignmentService } from '../../services/flowerpot-assignment.
 })
 export class MyFlowerpotsComponent implements OnInit{
   flowerpotIds: number[] = [];
-  isLoading = true; // Bandera de carga
+  isLoading = true;
 
-  spinnerDiameter = 50; // Diámetro en píxeles
-  spinnerStrokeWidth = 5; // Grosor del trazo en píxeles
+  spinnerDiameter = 50;
+  spinnerStrokeWidth = 5;
 
   constructor(private router: Router, private authService: AuthService, private flowerpotAssignmentService: FlowerpotAssignmentService) {}
 

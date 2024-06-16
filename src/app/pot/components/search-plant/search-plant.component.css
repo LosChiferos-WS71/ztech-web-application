@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-row-gap: 20px; 
-  grid-column-gap: 50px; /* Espacio entre las tarjetas */
+  grid-column-gap: 50px;
 }
 
 
@@ -46,7 +46,7 @@
 }
 
 .no-results img {
-  width: 45%; /* Ajusta el tamaño según tus necesidades */
+  width: 45%;
   height: auto;
   margin-bottom: 20px;
 }
@@ -54,14 +54,14 @@
 .no-results p {
   font-size: 16px;
 
-  color: #666;
-  margin: 5px 0; /* Ajusta el margen entre el título y el subtítulo */
+  color: black;
+  margin: 5px 0;
 }
 
 .no-results .subtext {
   font-size: 14px;
-  color: #888;
-  text-align: center; /* Centrado del subtítulo */
-  max-width: 60%; /* Limita el ancho del subtítulo */
+  color: black;
+  text-align: center;
+  max-width: 60%;
 }
 

@@ -1,19 +1,19 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { MatCardModule } from '@angular/material/card';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-plant-detail',
   standalone: true,
-  imports: [MatCardModule, CommonModule],
+  imports: [CommonModule, MatCardModule, MatIconModule],
   templateUrl: './plant-detail.component.html',
-  styleUrl: './plant-detail.component.css'
+  styleUrls: ['./plant-detail.component.css']
 })
-
 export class PlantDetailComponent implements OnInit {
   plant: any;
-
 
   private plants = [
     { 
@@ -81,10 +81,14 @@ export class PlantDetailComponent implements OnInit {
     }
   ];
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
     const plantId = this.route.snapshot.paramMap.get('id');
     this.plant = this.plants.find(p => p.id === plantId);
+  }
+
+  onBack(): void {
+    this.router.navigate(['/plant/view']);
   }
 }

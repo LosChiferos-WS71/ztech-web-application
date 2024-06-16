@@ -1,44 +1,50 @@
-<div class="container" *ngIf="plant">
-  <div class="left-column">
-
-    <div class="img-container">
-    <img mat-card-image [src]="plant.image" alt="{{ plant.name }}">
-    </div>
-
-    <button>Add me to a pot</button>
-    <div class="info-box">
-      <div>
-        <span class="icon">💧</span>
-        {{ plant.waterEvery }}
-      </div>
-      <div>
-        <span class="icon">☀️</span>
-        {{ plant.sunHours }}
-      </div>
-    </div>
+<div class="page-container">
+  <div class="header">
+    <mat-icon class="icon-header" (click)="onBack()">arrow_back</mat-icon>
+    <span class="plant-name">{{ plant.name }}</span>
   </div>
 
-  <div class="right-column">
-    <h1>{{ plant.name }}</h1>
-    <h2>{{ plant.subname }}</h2>
-    <h3>Description:</h3>
-    <p>{{ plant.description }}</p>
-    <h3 class="recomentaion">Recommendations:</h3>
-    <ul>
-      <li *ngFor="let recommendation of plant.recommendations">{{ recommendation }}</li>
-    </ul>
-    <div class="parameters">
-      <div class="card">
-        <h4>Environmental Temperature: {{ plant.parameters.environmentalTemperature }}</h4>
-        <p>Temperature: {{ plant.parameters.temperature }}</p>
+  <div class="container" *ngIf="plant">
+    <div class="left-column">
+      <div class="img-container">
+        <img mat-card-image [src]="plant.image" alt="{{ plant.name }}">
       </div>
-      <div class="card">
-        <h4>Sunlight: {{ plant.parameters.sunlight }}</h4>
-        <p>UV rays: {{ plant.parameters.uvRays }}</p>
+
+      <button class="add-button">Add me to a pot</button>
+      <div class="info-box">
+        <div>
+          <span class="icon">💧</span>
+          {{ plant.waterEvery }}
+        </div>
+        <div>
+          <span class="icon">☀️</span>
+          {{ plant.sunHours }}
+        </div>
       </div>
-      <div class="card">
-        <h4>Humidity of floor: {{ plant.parameters.humidityOfFloor }}</h4>
-        <p>Humidity percentage: {{ plant.parameters.humidityPercentage }}</p>
+    </div>
+
+    <div class="right-column">
+      <h1>{{ plant.name }}</h1>
+      <h2>{{ plant.subname }}</h2>
+      <h3>Description:</h3>
+      <p>{{ plant.description }}</p>
+      <h3 class="recommendation">Recommendations:</h3>
+      <ul>
+        <li *ngFor="let recommendation of plant.recommendations">{{ recommendation }}</li>
+      </ul>
+      <div class="parameters">
+        <div class="card">
+          <h4>Environmental Temperature: {{ plant.parameters.environmentalTemperature }}</h4>
+          <p>Temperature: {{ plant.parameters.temperature }}</p>
+        </div>
+        <div class="card">
+          <h4>Sunlight: {{ plant.parameters.sunlight }}</h4>
+          <p>UV rays: {{ plant.parameters.uvRays }}</p>
+        </div>
+        <div class="card">
+          <h4>Humidity of floor: {{ plant.parameters.humidityOfFloor }}</h4>
+          <p>Humidity percentage: {{ plant.parameters.humidityPercentage }}</p>
+        </div>
       </div>
     </div>
   </div>

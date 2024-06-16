@@ -49,4 +49,10 @@ export class FlowerpotAssignmentService {
       .post<FlowerpotAssignmentResponse>(`${this.baseUrl}/flowerpotId`, flowerpotId, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
+
+  getPlantTypeIdsByPlantOwnerId(plantOwnerId: number) {
+    return this.http
+      .post<number[]>(`${this.baseUrl}/plant/owner/plantTypeIds`, plantOwnerId, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
 }

@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { Router } from '@angular/router';
+import { PlantTypeResponse } from '../../models/plant-type.model';
 
 interface Plant {
   id: string;  // Asegúrate de que la interfaz Plant tiene un 'id' para la navegación
@@ -17,11 +18,11 @@ interface Plant {
   styleUrls: ['./card-plant.component.css']
 })
 export class CardPlantComponent {
-  @Input() plant!: Plant;
+  @Input() plantType!: PlantTypeResponse;
 
-  constructor(private router: Router) {}  // Inyectar Router en el constructor
+  constructor(private router: Router) {}
 
   navigateToDetail() {
-    this.router.navigate(['/plant/detail', this.plant.id]);  // Navegación usando el ID de la planta
+    this.router.navigate(['/plant/detail', this.plantType.id]);
   }
 }

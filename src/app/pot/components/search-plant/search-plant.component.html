@@ -3,17 +3,16 @@
   <input type="text" class="custom-search-input" [(ngModel)]="searchText" (ngModelChange)="filterPlants()" placeholder="Enter the plant you want to search for">
 </div>
 
-
 <br>
 <div class="plant-grid" *ngIf="filteredPlants.length > 0; else noResultsTemplate">
   <div *ngFor="let plant of filteredPlants">
-    <app-card-plant [plant]="plant"></app-card-plant>
+    <app-card-plant [plantType]="plant"></app-card-plant>
   </div>
 </div>
 
 <ng-template #noResultsTemplate>
   <div class="no-results">
-    <img src="https://media.discordapp.net/attachments/1228201584245084265/1243970540289396838/Frame.png?ex=66536958&is=665217d8&hm=4f532973437fbd9d0e08836081ec6a01696524bbfe47401e8f4d7eb417535672&=&format=webp&quality=lossless&width=312&height=306" alt="No results found">
+    <img src="../../../../assets/plant-type/no results.png" alt="No results found">
     <p>No found</p>
     <p class="subtext">Sorry, the keyword you entered cannot be found. Please check again or search with another keyword.</p>
   </div>

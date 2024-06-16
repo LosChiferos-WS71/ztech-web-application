@@ -21,7 +21,6 @@ export class CardFlowerpotMetricsComponent implements OnInit{
   ngOnInit() {
     this.flowerpotService.getFlowerpotById(this.flowerpotId).subscribe((data) => {
       this.flowerpot = data;
-      console.log(this.flowerpot);
     });
   }
 

@@ -5,7 +5,7 @@ import { ToolbarComponent } from '../../components/toolbar/toolbar.component';
 import { FlowerpotComponent } from '../../../loan/components/flowerpot/flowerpot.component';
 import { FlowerpotService } from '../../../pot/services/flowerpot.service';
 import { PlantTypeService } from '../../../pot/services/plant-type.service';
-import { GetPlantType } from '../../../pot/models/plant-type.model';
+import { PlantTypeResponse } from '../../../pot/models/plant-type.model';
 
 @Component({
   selector: 'app-choose-plant',
@@ -16,8 +16,8 @@ import { GetPlantType } from '../../../pot/models/plant-type.model';
 })
 export class ChoosePlantComponent implements OnInit {
   searchText: string = '';
-  plants: GetPlantType[] = [];
-  filteredPlants: GetPlantType[] = [];
+  plants: PlantTypeResponse[] = [];
+  filteredPlants: PlantTypeResponse[] = [];
 
   constructor(private plantTypeService: PlantTypeService) {}
 

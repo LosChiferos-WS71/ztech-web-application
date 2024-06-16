@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment.development';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError, retry, throwError } from 'rxjs';
+import { PlantTypeResponse } from '../models/plant-type.model';
 
 @Injectable({
   providedIn: 'root'
@@ -31,15 +32,21 @@ export class PlantTypeService {
     return throwError(() => ({ status: error.status, message: error.error.message }))
   }
 
-  getAllPlantTypes(): Observable<any> {
+  getAllPlantTypes(): Observable<PlantTypeResponse[]> {
     return this.http
-      .get(`${this.baseUrl}`)
+      .get<PlantTypeResponse[]>(`${this.baseUrl}`)
       .pipe(retry(2), catchError(this.handleError));
   }
 
-  getPlantTypeByName(name: string): Observable<any> {
+  getPlantTypeByName(name: string): Observable<PlantTypeResponse> {
     return this.http
-      .post(`${this.baseUrl}/name`, name, this.httpOptions)
+      .post<PlantTypeResponse>(`${this.baseUrl}/name`, name, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
+  getPlantTypeById(id: number): Observable<PlantTypeResponse> {
+    return this.http
+      .get<PlantTypeResponse>(`${this.baseUrl}/${id}`)
       .pipe(retry(2), catchError(this.handleError));
   }
 }
