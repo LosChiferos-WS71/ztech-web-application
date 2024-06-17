@@ -1,13 +1,14 @@
 <div class="add-flowerpot-content">
-    <div class="centered-container">
-        <div class="image-upload">
-          <img src="../../../../assets/ztech/add-image.png" alt="Add Image" class="image-icon">
-          <p>Add the image for your flowerpot</p>
-        </div>
-      </div>
-      <div class="input-container">
-          <i class="material-icons">local_florist</i>
-          <input type="text" placeholder="Enter the name of the plant or flowerpot.">
-      </div>
-    <button class="save-button" (click)="onSaveClick()">Save</button>
+  <label class="centered-container" for="file-upload" id="image-upload-label">
+    <img src="../../../../assets/ztech/add-image.png" alt="Add Image" class="image-icon" id="image-preview">
+    <p id="image-text">Add the image for your flowerpot</p>
+  </label>
+  <input id="file-upload" type="file" accept="image/*" style="display: none;" (change)="onImageSelected($event)">
+  <div class="input-container">
+    <mat-form-field appearance="outline" class="input-data">
+      <mat-icon matPrefix style="display: flex; align-items: center;">local_florist</mat-icon>
+      <input matInput type="text" placeholder="Enter a flowerpot name" [(ngModel)]="name" name="name">
+    </mat-form-field>
+  </div>
+  <button class="save-button" (click)="onSaveClick()">Save</button>
 </div>

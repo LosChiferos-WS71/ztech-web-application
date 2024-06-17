@@ -1,0 +1,44 @@
+.icons-container {
+  width: 100%;
+}
+
+mat-icon {
+  margin: 0 8px;
+}
+
+/* Clases para los colores basados en los valores */
+.temperature-low {
+  color: blue;
+}
+
+.temperature-medium {
+  color: green;
+}
+
+.temperature-high {
+  color: red;
+}
+
+.humidity-low {
+  color: blue;
+}
+
+.humidity-medium {
+  color: green;
+}
+
+.humidity-high {
+  color: red;
+}
+
+.sunlight-low {
+  color: blue;
+}
+
+.sunlight-medium {
+  color: green;
+}
+
+.sunlight-high {
+  color: red;
+}

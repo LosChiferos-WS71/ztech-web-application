@@ -1,66 +1,34 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 
 import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
 
-interface Flowerpot {
-  id: string;
-  name: string;
-  image: string;
-  temperatureValue: number;
-  humidityValue: number;
-  sunlightValue: number;
-}
+import { CardFlowerpotMetricsComponent } from '../../../pot/components/card-flowerpot-metrics/card-flowerpot-metrics.component';
+
+import { FlowerpotAssignmentResponse } from '../../models/flowerpot-assignment.model';
+import { FlowerpotAssignmentService } from '../../services/flowerpot-assignment.service';
 
 @Component({
   selector: 'app-card-flowerpot',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatIconModule],
+  imports: [CommonModule, MatCardModule, CardFlowerpotMetricsComponent],
   templateUrl: './card-flowerpot.component.html',
   styleUrl: './card-flowerpot.component.css'
 })
-export class CardFlowerpotComponent {
-  @Input() flowerpot!: Flowerpot;
+export class CardFlowerpotComponent implements OnInit{
+  @Input() flowerpotId!: number;
+  flowerpotAssignment!: FlowerpotAssignmentResponse;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private flowerpotAssignmentService: FlowerpotAssignmentService) {}
+
+  ngOnInit() {
+    this.flowerpotAssignmentService.getFlowerpotAssignmentByFlowerpotId(this.flowerpotId).subscribe((data) => {
+      this.flowerpotAssignment = data;
+    });
   }
 
   navigateToDetail() {
     this.router.navigate(['/flowerpot/detail']);
-  }
-
-  getTemperatureClass(): string {
-    const value = this.flowerpot.temperatureValue;
-    if (value < 15) {
-      return 'temperature-low';
-    } else if (value >= 15 && value <= 25) {
-      return 'temperature-medium';
-    } else {
-      return 'temperature-high';
-    }
-  }
-
-  getHumidityClass(): string {
-    const value = this.flowerpot.humidityValue;
-    if (value < 30) {
-      return 'humidity-low';
-    } else if (value >= 30 && value <= 60) {
-      return 'humidity-medium';
-    } else {
-      return 'humidity-high';
-    }
-  }
-
-  getSunlightClass(): string {
-    const value = this.flowerpot.sunlightValue;
-    if (value < 30) {
-      return 'sunlight-low';
-    } else if (value >= 30 && value <= 70) {
-      return 'sunlight-medium';
-    } else {
-      return 'sunlight-high';
-    }
   }
 }

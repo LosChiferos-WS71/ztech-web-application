@@ -1,70 +1,49 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { CardFlowerpotComponent } from '../card-flowerpot/card-flowerpot.component';
+import { AuthService } from '../../../shared/services/auth.service';
+import { FlowerpotAssignmentService } from '../../services/flowerpot-assignment.service';
 
 @Component({
   selector: 'app-my-flowerpots',
   standalone: true,
-  imports: [CommonModule, CardFlowerpotComponent, MatButtonModule, MatIconModule],
+  imports: [CommonModule, CardFlowerpotComponent, MatButtonModule, MatIconModule, MatProgressSpinnerModule],
   templateUrl: './my-flowerpots.component.html',
   styleUrl: './my-flowerpots.component.css'
 })
-export class MyFlowerpotsComponent {
-  flowerpots = [
-    {
-      id: '1',
-      name: 'Basil',
-      image: 'https://img.freepik.com/vector-gratis/planta-maceta-dibujos-animados_1308-107212.jpg',
-      temperatureValue: 20,
-      humidityValue: 50,
-      sunlightValue: 60
-    },
-    {
-      id: '2',
-      name: 'Mint',
-      image: 'https://content.elmueble.com/medio/2019/03/25/monstera_f97f4746_800x800.jpg',
-      temperatureValue: 25,
-      humidityValue: 40,
-      sunlightValue: 70
-    },
-    {
-      id: '3',
-      name: 'Rosemary',
-      image: 'https://img.freepik.com/vector-gratis/planta-maceta-dibujos-animados_1308-107212.jpg',
-      temperatureValue: 30,
-      humidityValue: 60,
-      sunlightValue: 50
-    },
-    {
-      id: '4',
-      name: 'Thyme',
-      image: 'https://img.freepik.com/vector-gratis/planta-maceta-dibujos-animados_1308-107212.jpg',
-      temperatureValue: 15,
-      humidityValue: 70,
-      sunlightValue: 40
-    },
-    {
-      id: '5',
-      name: 'Parsley',
-      image: 'https://content.elmueble.com/medio/2019/03/25/monstera_f97f4746_800x800.jpg',
-      temperatureValue: 20,
-      humidityValue: 50,
-      sunlightValue: 60
-    }
-  ];
+export class MyFlowerpotsComponent implements OnInit{
+  flowerpotIds: number[] = [];
+  isLoading = true;
 
-  constructor(private router: Router) {}
+  spinnerDiameter = 50;
+  spinnerStrokeWidth = 5;
+
+  constructor(private router: Router, private authService: AuthService, private flowerpotAssignmentService: FlowerpotAssignmentService) {}
+
+  ngOnInit() {
+    this.flowerpotAssignmentService.getFlowerpotIdsByPlantOwnerId(this.authService.getUser()?.id).subscribe(
+      (data) => {
+        this.flowerpotIds = data;
+        this.isLoading = false;
+      },
+      (error) => {
+        console.error('Error fetching flowerpot IDs', error);
+        this.isLoading = false;
+      }
+    );
+  }
 
   goToAnotherComponent() {
     this.router.navigate(['/add/pot']);
   }
 
   isFlowerpotsEmpty(): boolean {
-    return this.flowerpots.length === 0;
+    return this.flowerpotIds.length === 0;
   }
 }

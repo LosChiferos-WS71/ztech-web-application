@@ -1,6 +1,6 @@
 <div class="profile">
     <div class="photo">
-        <img src="../../../../assets/profile/profile-icon.png" alt="Photo">
+        <img [src]="photo" alt="Photo">
     </div>
 
     <hr class="divider">
@@ -16,7 +16,7 @@
             <input matInput placeholder="Address" [(ngModel)]="address" name="address" disabled>
         </mat-form-field>
         <mat-form-field appearance="outline" class="input-data">
-            <input matInput placeholder="Birthdate" [(ngModel)]="birthdate" name="birthdate" disabled>
+            <input matInput placeholder="Birthdate" [(ngModel)]="birthday" name="birthday" disabled>
         </mat-form-field>
         <div class="profile-form-subcontainer">
             <mat-form-field appearance="outline" class="sub-input">

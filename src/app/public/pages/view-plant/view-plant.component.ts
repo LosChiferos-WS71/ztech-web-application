@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ToolbarComponent } from '../../components/toolbar/toolbar.component';
 import { CardPlantComponent } from '../../../pot/components/card-plant/card-plant.component';
 import { SearchPlantComponent } from "../../../pot/components/search-plant/search-plant.component";
-import { MyPlantComponent } from '../../../pot/components/my-plant/my-plant.component';
+import { MyPlantComponent } from '../../../loan/components/my-plant/my-plant.component';
 
 @Component({
     selector: 'app-view-plant',

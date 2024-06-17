@@ -1,8 +1,8 @@
 .component-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 160px;
 }
 
 .flowerpot-card {
@@ -21,8 +21,7 @@
 .img-container {
   width: 100%;
   height: 130px; 
-  overflow: hidden; 
-
+  overflow: hidden;
   border-radius: 15px;
 }
 
@@ -32,22 +31,19 @@ img[mat-card-image] {
   object-fit: cover; 
 }
 
-.icons-container {
-  height: 45px; 
-  background-color: #ccc;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 mat-card-content {
+  background-color: #ccc;
   display: flex;
   width: 100%;
   flex-direction: row;
 }
 
-mat-icon {
-  margin: 0 8px;
+.icons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .text-section {
@@ -63,41 +59,4 @@ mat-icon {
   margin: 0;
   word-break: break-word;
   font-weight: bold;
-}
-
-/* Clases para los colores basados en los valores */
-.temperature-low {
-  color: blue;
-}
-
-.temperature-medium {
-  color: orange;
-}
-
-.temperature-high {
-  color: red;
-}
-
-.humidity-low {
-  color: lightblue;
-}
-
-.humidity-medium {
-  color: blue;
-}
-
-.humidity-high {
-  color: darkblue;
-}
-
-.sunlight-low {
-  color: yellow;
-}
-
-.sunlight-medium {
-  color: gold;
-}
-
-.sunlight-high {
-  color: darkorange;
 }

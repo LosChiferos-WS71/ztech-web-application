@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    api: 'https://my-json-server.typicode.com/LosChiferos-WS71/fake-api-ztech'
+    api: 'https://ztech-web-service-production.up.railway.app/api/v1/'
 };

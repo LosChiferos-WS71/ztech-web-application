@@ -6,6 +6,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { AuthService } from '../../../shared/services/auth.service';
+import { PlantOwnerService } from '../../services/plant-owner.service';
 
 
 @Component({
@@ -18,11 +20,17 @@ import { MatButtonModule } from '@angular/material/button';
 export class RecoverPasswordFormComponent {
   email: string = '';
 
-  constructor(private router: Router) {};
+  constructor(private router: Router, private authService: AuthService, private plantOwnerService: PlantOwnerService) {};
 
   recoverPassword() {
-    // Logica de verificacion de correo y envio de correo
-    this.router.navigate(['/recover/password/confirmation', "valid"]);
+    this.plantOwnerService.getPlantOwnerByEmail(this.email).subscribe(
+      () => {
+        this.authService.forgotPassword(this.email);
+      },
+      error => {
+        this.router.navigate(['/recover/password/confirmation', "invalid"]);
+      }
+    );
   }
 
   goToLogin() {

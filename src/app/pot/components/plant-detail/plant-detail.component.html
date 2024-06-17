@@ -1,45 +1,40 @@
-<div class="container" *ngIf="plant">
-  <div class="left-column">
-
-    <div class="img-container">
-    <img mat-card-image [src]="plant.image" alt="{{ plant.name }}">
+<body>
+  <div class="page-container">
+    <div class="header">
+      <mat-icon class="icon-header" (click)="onBack()">arrow_back</mat-icon>
+      <span class="plant-name">{{ plantTypeDetail.plantType.name }}</span>
     </div>
-
-    <button>Add me to a pot</button>
-    <div class="info-box">
-      <div>
-        <span class="icon">💧</span>
-        {{ plant.waterEvery }}
+  
+    <div class="container" *ngIf="plantTypeDetail">
+      <div class="left-column">
+        <div class="img-container">
+          <img mat-card-image [src]="plantTypeDetail.plantType.photo" alt="{{ plantTypeDetail.plantType.name }}">
+        </div>
       </div>
-      <div>
-        <span class="icon">☀️</span>
-        {{ plant.sunHours }}
-      </div>
-    </div>
-  </div>
-
-  <div class="right-column">
-    <h1>{{ plant.name }}</h1>
-    <h2>{{ plant.subname }}</h2>
-    <h3>Description:</h3>
-    <p>{{ plant.description }}</p>
-    <h3 class="recomentaion">Recommendations:</h3>
-    <ul>
-      <li *ngFor="let recommendation of plant.recommendations">{{ recommendation }}</li>
-    </ul>
-    <div class="parameters">
-      <div class="card">
-        <h4>Environmental Temperature: {{ plant.parameters.environmentalTemperature }}</h4>
-        <p>Temperature: {{ plant.parameters.temperature }}</p>
-      </div>
-      <div class="card">
-        <h4>Sunlight: {{ plant.parameters.sunlight }}</h4>
-        <p>UV rays: {{ plant.parameters.uvRays }}</p>
-      </div>
-      <div class="card">
-        <h4>Humidity of floor: {{ plant.parameters.humidityOfFloor }}</h4>
-        <p>Humidity percentage: {{ plant.parameters.humidityPercentage }}</p>
+  
+      <div class="right-column">
+        <h1>{{ plantTypeDetail.plantType.name }}</h1>
+        <h2>{{ plantTypeDetail.plantType.scientificName }}</h2>
+        <h3>Description:</h3>
+        <p>{{ plantTypeDetail.plantType.description }}</p>
+        <div class="parameters">
+          <div class="card">
+            <h4>Environmental Temperature:</h4>
+            <p>Minimum: {{ minTemperature?.value }} °C</p>
+            <p>Maximum: {{ maxTemperature?.value }} °C</p>
+          </div>
+          <div class="card">
+            <h4>Humidity of Floor:</h4>
+            <p>Minimum: {{ minHumidity?.value }} %</p>
+            <p>Maximum: {{ maxHumidity?.value }} %</p>
+          </div>
+          <div class="card">
+            <h4>Sunlight:</h4>
+            <p>Minimum: {{ minSunlight?.value }} UV</p>
+            <p>Maximum: {{ maxSunlight?.value }} UV</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</body>

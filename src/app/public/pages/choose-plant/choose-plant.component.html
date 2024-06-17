@@ -18,9 +18,9 @@
   
     <div class="flowerpot-container">
       <ng-container *ngIf="filteredPlants.length > 0;   else noResults">
-        <app-flowerpot *ngFor="let plant of plants"
-                     [imageSrc]="plant.imageSrc"
-                     [title]="plant.title"
+        <app-flowerpot *ngFor="let plant of filteredPlants"
+                     [photo]="plant.photo"
+                     [name]="plant.name"
                      [description]="plant.description">
         </app-flowerpot>
       </ng-container>
