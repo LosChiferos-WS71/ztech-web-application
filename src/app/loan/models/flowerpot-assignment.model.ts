@@ -9,6 +9,7 @@ export interface FlowerpotAssignmentRequest {
 }
 
 export interface FlowerpotAssignmentResponse {
+    plantTypeId: number,
     name: string,
     photo: string,
     startDate: string,

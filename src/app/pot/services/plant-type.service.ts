@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment.development';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError, retry, throwError } from 'rxjs';
-import { PlantTypeDetailsResponse, PlantTypeResponse } from '../models/plant-type.model';
+import { ParameterResponse, PlantTypeDetailsResponse, PlantTypeResponse } from '../models/plant-type.model';
 
 @Injectable({
   providedIn: 'root'
@@ -47,6 +47,12 @@ export class PlantTypeService {
   getPlantTypeById(id: number): Observable<PlantTypeResponse> {
     return this.http
       .get<PlantTypeResponse>(`${this.baseUrl}/${id}`)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
+  getParametersByPlantTypeId(plantTypeId: number): Observable<ParameterResponse[]> {
+    return this.http
+      .get<ParameterResponse[]>(`${this.baseUrl}/${plantTypeId}/parameters`)
       .pipe(retry(2), catchError(this.handleError));
   }
 
