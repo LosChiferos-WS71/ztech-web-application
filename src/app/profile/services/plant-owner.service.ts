@@ -49,4 +49,10 @@ export class PlantOwnerService {
       .get<PlantOwnerResponse>(`${this.baseUrl}/${id}`)
       .pipe(retry(2), catchError(this.handleError));
   }
+
+  updatePlantOwner(plantOwnerId: number, plantOwnerRequest: PlantOwnerRequest) {
+    return this.http
+      .put(`${this.baseUrl}/${plantOwnerId}`, plantOwnerRequest, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
 }

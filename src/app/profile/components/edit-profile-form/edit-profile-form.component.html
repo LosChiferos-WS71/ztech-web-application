@@ -1,35 +1,49 @@
 <div class="edit-profile">
     <div class="photo">
-        <img src="../../../../assets/profile/profile-icon.png" alt="Photo">
+        <label for="file-upload" id="image-upload-label">
+            <img [src]="photo" alt="Photo" id="image-preview">
+        </label>
+        <input id="file-upload" type="file" accept="image/*" style="display: none;" (change)="onImageSelected($event)">
     </div>
 
     <hr class="divider">
 
     <div class="edit-profile-form-container">
-        <mat-form-field appearance="outline" class="input-data">
-            <input matInput placeholder="Name" [(ngModel)]="name" name="name" >
-        </mat-form-field>
-        <mat-form-field appearance="outline" class="input-data">
-            <input matInput placeholder="Email" [(ngModel)]="email" name="email">
-        </mat-form-field>
-        <mat-form-field appearance="outline" class="input-data">
-            <input matInput placeholder="Address" [(ngModel)]="address" name="address">
-        </mat-form-field>
-        <mat-form-field appearance="outline" class="input-data">
-            <input matInput placeholder="Birthdate" [(ngModel)]="birthdate" [matDatepicker]="picker" name="birthdate">
-            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-        <div class="edit-profile-form-subcontainer">
-            <mat-form-field appearance="outline" class="sub-input">
-                <input matInput placeholder="Gender" [(ngModel)]="gender" name="gender">
+        <form #profileForm="ngForm" (ngSubmit)="saveProfile(profileForm)">
+            <mat-form-field appearance="outline" class="input-data">
+                <input matInput placeholder="Name" [(ngModel)]="name" name="name" required>
+                <mat-error *ngIf="profileForm.controls['name']?.invalid && profileForm.controls['name']?.touched">
+                    Name is required
+                </mat-error>
             </mat-form-field>
-            <mat-form-field appearance="outline" class="sub-input">
-                <input matInput placeholder="Phone" [(ngModel)]="phone" name="phone">
+            <mat-form-field appearance="outline" class="input-data">
+                <input matInput placeholder="Email" [(ngModel)]="email" name="email" disabled>
             </mat-form-field>
-        </div>
-        <div>
-            <button mat-raised-button class="button-style" (click)="saveProfile()">Accept</button>
-        </div>
+            <mat-form-field appearance="outline" class="input-data">
+                <input matInput placeholder="Address" [(ngModel)]="address" name="address">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="input-data">
+                <input matInput placeholder="Birthdate" [(ngModel)]="birthday" [matDatepicker]="picker" name="birthday">
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <div class="edit-profile-form-subcontainer">
+                <mat-form-field appearance="outline" class="sub-input">
+                    <mat-select [(ngModel)]="gender" placeholder="Gender" name="gender">
+                      <mat-option value="male">Male</mat-option>
+                      <mat-option value="female">Female</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="sub-input">
+                    <input matInput placeholder="Phone" [(ngModel)]="phone" name="phone" pattern="^9\d{8}$">
+                    <mat-error *ngIf="profileForm.controls['phone']?.invalid && profileForm.controls['phone']?.touched">
+                        Invalid phone number
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <button mat-raised-button class="button-style" [disabled]="profileForm.invalid">Accept</button>
+            </div>
+        </form>
     </div>
 </div>

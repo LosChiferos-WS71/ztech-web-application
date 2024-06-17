@@ -22,6 +22,7 @@ export class ProfileFormComponent implements OnInit{
   birthday: string = '';
   gender: string = '';
   phone: string = '';
+  photo: string = '';
 
   constructor(private router: Router, private authService: AuthService , private plantOwnerService: PlantOwnerService) {}
 
@@ -31,15 +32,41 @@ export class ProfileFormComponent implements OnInit{
         this.name = response.name;
         this.email = response.email;
         this.address = response.address;
-        this.birthday = response.birthday;
-        this.gender = response.gender;
+        this.birthday = this.formatDateToDisplay(response.birthday);
+        if (response.gender == "male") {
+          this.gender = "Male";
+        } else if (response.gender == "female") {
+          this.gender = "Female"
+        } else {
+          this.gender = response.gender;
+        }
         if (response.phone == 0) {
           this.phone = '';
         } else {
           this.phone = response.phone.toString();
         }
+        if (response.photo == null || response.photo == '') {
+          this.photo = "../../../assets/profile/profile-icon.png";
+        } else {
+          this.photo = response.photo;
+        }
       }
     );
+  }
+
+  formatDateToDisplay(dateString: string): string {
+    const parts = dateString.split('-');
+
+    if (parts.length !== 3) {
+      console.error('Invalid date format');
+      return dateString;
+    }
+
+    const year = parts[0];
+    const month = parts[1];
+    const day = parts[2];
+    
+    return `${day}/${month}/${year}`;
   }
 
   editProfile(): void {
