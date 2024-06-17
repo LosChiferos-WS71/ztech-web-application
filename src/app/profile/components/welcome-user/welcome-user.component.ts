@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../../shared/services/auth.service';
+import { PlantOwnerService } from '../../services/plant-owner.service';
 
 @Component({
   selector: 'app-welcome-user',
@@ -12,16 +13,20 @@ export class WelcomeUserComponent {
   name: string = '';
   photo: string = '';
 
-  constructor(private authService: AuthService) { 
+  constructor(private authService: AuthService, private plantOwnerService: PlantOwnerService) { 
     this.getUserNameAndPhoto();
   }
 
   getUserNameAndPhoto() {
-    this.name = this.authService.getUser()?.name;
-    if (this.authService.getUser()?.photo.length == 0 || this.authService.getUser()?.photo == null) {
-      this.photo = "../../../../assets/profile/profile-icon.png"
-    } else{
-      this.photo = this.authService.getUser()?.photo;
-    }
+    this.plantOwnerService.getPlantOwnerByEmail(this.authService.getUser()?.email).subscribe(
+      (response) => {
+        this.name = response.name;
+        if (response.photo.length == 0 || response.photo == null) {
+          this.photo = "../../../../assets/profile/profile-icon.png"
+        } else{
+          this.photo = response.photo;
+        }
+      }
+    );
   }
 }

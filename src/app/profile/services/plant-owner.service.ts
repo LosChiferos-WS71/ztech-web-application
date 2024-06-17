@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment.development';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { catchError, retry, throwError } from 'rxjs';
-import { PlantOwnerRequest } from '../models/plant-owner.model';
+import { Observable, catchError, retry, throwError } from 'rxjs';
+import { PlantOwnerRequest, PlantOwnerResponse } from '../models/plant-owner.model';
 
 @Injectable({
   providedIn: 'root'
@@ -38,9 +38,15 @@ export class PlantOwnerService {
       .pipe(retry(2), catchError(this.handleError));
   }
 
-  getPlantOwnerByEmail(email: string) {
+  getPlantOwnerByEmail(email: string): Observable<PlantOwnerResponse> {
     return this.http
-      .post(`${this.baseUrl}/email`, email, this.httpOptions)
+      .post<PlantOwnerResponse>(`${this.baseUrl}/email`, email, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
+  getPlantOwnerById(id: number): Observable<PlantOwnerResponse> {
+    return this.http
+      .get<PlantOwnerResponse>(`${this.baseUrl}/${id}`)
       .pipe(retry(2), catchError(this.handleError));
   }
 }
