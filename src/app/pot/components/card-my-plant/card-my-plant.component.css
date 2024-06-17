@@ -37,13 +37,7 @@ img[mat-card-image] {
 
 mat-card-title {
   color: black;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
-  margin-bottom: -10px; 
-}
-
-mat-card-subtitle {
-  color: black;
-  font-size: 12px;
-  font-style: italic;
+  line-height: 0.9;
 }

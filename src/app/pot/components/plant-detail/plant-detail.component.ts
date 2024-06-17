@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { ParameterResponse, ParameterType, PlantTypeDetailsResponse } from '../../models/plant-type.model';
+import { PlantTypeService } from '../../services/plant-type.service';
 
 @Component({
   selector: 'app-plant-detail',
@@ -13,82 +15,40 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrls: ['./plant-detail.component.css']
 })
 export class PlantDetailComponent implements OnInit {
-  plant: any;
+  plantTypeDetail!: PlantTypeDetailsResponse;
 
-  private plants = [
-    { 
-      id: '1', 
-      name: 'PLANT 1', 
-      subname: 'Plant 1 Subname',
-      description: 'Description of Plant 1', 
-      image: 'https://img.freepik.com/vector-gratis/planta-maceta-dibujos-animados_1308-107212.jpg',
-      recommendations: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "Fusce sed velit interdum, aliquam nisi vitae, mattis quam."
-      ],
-      parameters: {
-        environmentalTemperature: "Moderate",
-        temperature: "25°C",
-        sunlight: "High",
-        uvRays: "3UV",
-        humidityOfFloor: "Low",
-        humidityPercentage: "10%"
-      },
-      waterEvery: "5 days",
-      sunHours: "3 hours of sun a day"
-    },
-    { 
-      id: '2', 
-      name: 'PLANT 2', 
-      subname: 'Plant 2 Subname',
-      description: 'Description of Plant 2', 
-      image: 'https://content.elmueble.com/medio/2019/03/25/monstera_f97f4746_800x800.jpg',
-      recommendations: [
-        "Adjust your watering schedule according to the season.",
-        "Place your plant in indirect sunlight."
-      ],
-      parameters: {
-        environmentalTemperature: "Warm",
-        temperature: "22°C",
-        sunlight: "Medium",
-        uvRays: "2UV",
-        humidityOfFloor: "Medium",
-        humidityPercentage: "20%"
-      },
-      waterEvery: "7 days",
-      sunHours: "5 hours of sun a day"
-    },
-    { 
-      id: '3', 
-      name: 'PLANT 3', 
-      subname: 'Plant 3 Subname',
-      description: 'Description of Plant 3', 
-      image: 'https://media.istockphoto.com/id/1372896722/es/foto/planta-de-pl%C3%A1tano-en-maceta-aislada-sobre-fondo-blanco.jpg?s=612x612&w=0&k=20&c=l4EmNUhwxmge4YwY_u-n5YvOgzBjc4ruDGVfrm9m_s8=',
-      recommendations: [
-        "Do not overwater during the winter months.",
-        "Ensure the pot has good drainage."
-      ],
-      parameters: {
-        environmentalTemperature: "Cold",
-        temperature: "15°C",
-        sunlight: "Low",
-        uvRays: "1UV",
-        humidityOfFloor: "High",
-        humidityPercentage: "30%"
-      },
-      waterEvery: "10 days",
-      sunHours: "2 hours of sun a day"
-    }
-  ];
+  minTemperature!: ParameterResponse | undefined;
+  maxTemperature!: ParameterResponse | undefined;
+  minHumidity!: ParameterResponse | undefined;
+  maxHumidity!: ParameterResponse | undefined;
+  minSunlight!: ParameterResponse | undefined;
+  maxSunlight!: ParameterResponse | undefined;
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(private route: ActivatedRoute, private router: Router, private plantTypeService: PlantTypeService) {}
 
   ngOnInit() {
     const plantId = this.route.snapshot.paramMap.get('id');
-    this.plant = this.plants.find(p => p.id === plantId);
+    this.plantTypeService.getPlantTypeDetails(Number(plantId)).subscribe(
+      (data) => {
+        this.plantTypeDetail = data;
+        this.groupParameters();
+      },
+      (error) => {
+        console.log('Error: ', error);
+      }
+    );
   }
 
   onBack(): void {
     this.router.navigate(['/plant/view']);
+  }
+
+  groupParameters(): void {
+    this.minTemperature = this.plantTypeDetail.parameters.find(param => param.parameterType === ParameterType.MIN_TEMPERATURE);
+    this.maxTemperature = this.plantTypeDetail.parameters.find(param => param.parameterType === ParameterType.MAX_TEMPERATURE);
+    this.minHumidity = this.plantTypeDetail.parameters.find(param => param.parameterType === ParameterType.MIN_HUMIDITY);
+    this.maxHumidity = this.plantTypeDetail.parameters.find(param => param.parameterType === ParameterType.MAX_HUMIDITY);
+    this.minSunlight = this.plantTypeDetail.parameters.find(param => param.parameterType === ParameterType.MIN_SUNLIGHT);
+    this.maxSunlight = this.plantTypeDetail.parameters.find(param => param.parameterType === ParameterType.MAX_SUNLIGHT);
   }
 }
