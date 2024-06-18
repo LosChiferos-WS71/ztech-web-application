@@ -1,11 +1,11 @@
 mat-card {
-  background: #EDEDED; /* Color de fondo más claro */
+  background: #EDEDED;
   color: black;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 0 20px 20px 0;
-  height: 540px; /* Mantener la altura inicial */
-  width: 700px; /* Mantener el ancho inicial */
-  padding: 20px; /* Espacio interior */
+  height: 540px;
+  width: 700px;
+  padding: 20px;
 }
 
 mat-card-header {
@@ -13,9 +13,9 @@ mat-card-header {
 }
 
 mat-card-title {
-  font-size: 30px; /* Tamaño de fuente ajustado */
+  font-size: 30px;
   font-weight: bold;
-  color: black; /* Color del título */
+  color: black;
 }
 
 mat-card-content {
@@ -25,41 +25,41 @@ mat-card-content {
 .recommendation {
   display: flex;
   align-items: center;
-  font-size: 14px; /* Tamaño de fuente inicial */
+  font-size: 14px;
   margin-bottom: 20px;
   line-height: 1.5;
-  padding: 10px; /* Espacio interior para las recomendaciones */
-  border-radius: 10px; /* Bordes redondeados */
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .low-recommendation {
-  background-color: rgba(173, 216, 230, 0.5); /* Fondo rojo claro */
-  color: black; /* Texto rojo oscuro */
+  background-color: rgba(173, 216, 230, 0.5);
+  color: black;
 }
 
 .normal-recommendation {
-  background-color: rgba(144, 238, 144, 0.5); /* Fondo amarillo claro */
-  color: black; /* Texto amarillo oscuro */
+  background-color: rgba(144, 238, 144, 0.5);
+  color: black;
 }
 
 .high-recommendation {
-  background-color: rgba(255, 99, 71, 0.5); /* Fondo verde claro */
-  color: black; /* Texto verde oscuro */
+  background-color: rgba(255, 99, 71, 0.5);
+  color: black;
 }
 
 mat-icon {
-  font-size: 24px; /* Tamaño de los iconos */
-  margin-right: 15px; /* Espacio entre el icono y el texto */
+  font-size: 24px;
+  margin-right: 15px;
 }
 
 button[mat-raised-button] {
   margin-right: 8px;
   margin-top: 20px;
-  height: 50px; /* Altura de los botones */
-  width: 150px; /* Ancho de los botones */
-  border-radius: 10px; /* Bordes redondeados para los botones */
+  height: 50px;
+  width: 150px;
+  border-radius: 10px;
   font-weight: bold;
-  font-size: 16px; /* Tamaño de fuente ajustado */
+  font-size: 16px;
 }
 
 button[color="primary"] {

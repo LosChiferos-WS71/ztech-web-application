@@ -1,7 +1,7 @@
 .dashboard {
   display: flex;
   justify-content: center;
-  grid-column-gap: 200px; /* Espacio entre las tarjetas */
+  grid-column-gap: 200px;
 }
 .plant{
   margin-left: 20px;
@@ -13,22 +13,22 @@
 
 app-my-plant,
 app-search-plant {
-  flex-basis: 48%; /* O usa flex: 1 para dividir el espacio equitativamente */
-  padding: 10px; /* Añade padding si es necesario para cada componente */
+  flex-basis: 48%;
+  padding: 10px;
 }
 
 @media (max-width: 1250px) {
   .dashboard {
     flex-direction: column;
     align-items: center;
-    gap: 20px; /* Espacio entre los componentes cuando están en columna */
+    gap: 20px;
   }
 }
 
 h3 {
-  font-size: 35px; /* Ajusta el tamaño de fuente según Figma */
-  color: white; /* Color verde, ajusta según tu paleta */
-  margin-top: 20px; /* Espacio debajo del título */
-  text-align: left; /* Asegura que el título esté centrado */
-  font-weight: bold; /* Fuente en negrita */
+  font-size: 35px;
+  color: white;
+  margin-top: 20px;
+  text-align: left;
+  font-weight: bold;
 }

@@ -1,14 +1,14 @@
 .notification-card {
-  margin-bottom: 16px; /* Espacio entre cada tarjeta */
+  margin-bottom: 16px;
 }
 .alert-icon {
   color: red;
-  font-size: 24px; /* Tamaño del icono */
-  margin-right: 16px; /* Espacio entre el icono y el texto */
-  vertical-align: middle; /* Alinear verticalmente el icono con el texto */
+  font-size: 24px;
+  margin-right: 16px;
+  vertical-align: middle;
 }
 .notification-text {
-  display: inline-block; /* Hace que el texto se comporte como un bloque en línea */
-  width: calc(100% - 40px); /* Calcula el ancho del texto teniendo en cuenta el ancho del icono */
-  vertical-align: middle; /* Alinear verticalmente el texto con el icono */
+  display: inline-block;
+  width: calc(100% - 40px);
+  vertical-align: middle;
 }

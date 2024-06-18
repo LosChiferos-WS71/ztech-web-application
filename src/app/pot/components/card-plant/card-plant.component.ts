@@ -3,13 +3,6 @@ import { MatCardModule } from '@angular/material/card';
 import { Router } from '@angular/router';
 import { PlantTypeResponse } from '../../models/plant-type.model';
 
-interface Plant {
-  id: string;  // Asegúrate de que la interfaz Plant tiene un 'id' para la navegación
-  name: string;
-  description: string;
-  image: string;
-}
-
 @Component({
   selector: 'app-card-plant',
   standalone: true,

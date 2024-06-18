@@ -4,6 +4,7 @@ import { PlantRecommendationsComponent } from '../../../loan/components/plant-re
 import { PlantStatusComponent } from '../../../pot/components/plant-status/plant-status.component';
 import {MatIconModule} from '@angular/material/icon';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-flowerpot-detail',
   standalone: true,

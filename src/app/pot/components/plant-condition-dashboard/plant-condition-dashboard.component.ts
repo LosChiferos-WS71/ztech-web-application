@@ -17,7 +17,7 @@ export type ChartOptions = {
   standalone: true,
   imports: [NgApexchartsModule,MatCardModule, MatIconModule, MatListModule],
   templateUrl: './plant-condition-dashboard.component.html',
-  styleUrls: ['./plant-condition-dashboard.component.css'] // Corregido a styleUrls y es un array
+  styleUrls: ['./plant-condition-dashboard.component.css']
 })
 export class PlantConditionDashboardComponent {
   chartTemperature: ChartOptions = {

@@ -3,7 +3,8 @@ import { ToolbarComponent } from '../../components/toolbar/toolbar.component';
 import { PlantStatusComponent } from '../../../pot/components/plant-status/plant-status.component';
 import { PlantConditionDashboardComponent } from '../../../pot/components/plant-condition-dashboard/plant-condition-dashboard.component';
 import {MatIconModule} from '@angular/material/icon';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+
 @Component({
   selector: 'app-flowerpot-metrics',
   standalone: true,
@@ -12,9 +13,9 @@ import { Router } from '@angular/router';
   styleUrl: './flowerpot-metrics.component.css'
 })
 export class FlowerpotMetricsComponent {
-  constructor(private router: Router) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   onBack(): void {
-    this.router.navigate(['/flowerpot/detail']); // Asegúrate de tener la ruta correcta
+    this.router.navigate(['/flowerpot/detail', this.route.snapshot.paramMap.get('id')]);
   }
 }

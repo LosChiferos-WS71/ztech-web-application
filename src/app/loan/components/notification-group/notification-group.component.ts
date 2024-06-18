@@ -34,7 +34,7 @@ export class NotificationGroupComponent implements OnInit{
 
     groupNotificationsByDate() {
         const grouped: { [key: string]: Notification[] } = {};
-        const today = new Date().toISOString().split('T')[0]; // Obtiene la fecha de hoy en formato 'YYYY-MM-DD'
+        const today = new Date().toISOString().split('T')[0];
 
         this.notifications.forEach(notification => {
             const notificationDate = notification.day === today ? 'Today' : notification.day;

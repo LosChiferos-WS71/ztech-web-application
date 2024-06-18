@@ -9,8 +9,8 @@ body {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 1200px; /* Establece un máximo ancho para mantener el contenido centrado */
-  margin: 0 auto; /* Centra el contenido horizontalmente */
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
 }
 
@@ -58,8 +58,8 @@ app-plant-recommendations {
 
 @media (max-width: 1250px) {
   .dashboard {
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 }

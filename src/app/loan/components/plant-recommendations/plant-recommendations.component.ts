@@ -131,7 +131,7 @@ export class PlantRecommendationsComponent implements OnInit, OnDestroy{
   }
 
   navigateMetrics():void{
-    this.router.navigate(['/flowerpot/metrics']);
+    this.router.navigate(['/flowerpot/metrics', this.route.snapshot.paramMap.get('id')]);
   }
 
   changePlant():void{

@@ -1,44 +1,44 @@
 .notification-container {
-  background-color: #ededed; /* Fondo gris claro */
-  border: 1px solid #ccc; /* Borde gris */
+  background-color: #ededed;
+  border: 1px solid #ccc;
   position: fixed;
   padding: 20px;
   top: 70px;
   right: 10px;
   z-index: 1000;
-  width: 400px; /* Ancho fijo */
-  height: 80vh; /* Altura del 80% de la pantalla */
+  width: 400px;
+  height: 80vh;
   margin: 10px;
-  display: none; /* Cambiado a flex */
-  flex-direction: column; /* Organizar elementos en columna */
-  border-radius: 20px; /* Bordes redondeados */
+  display: none;
+  flex-direction: column;
+  border-radius: 20px;
 }
 
 .notification-container.show {
-  display: flex; /* Mostrar cuando se añada la clase 'show' */
+  display: flex;
 }
 
 .header h2 {
-  font-size: 30px; /* Tamaño de fuente más grande para el encabezado */
-  margin-bottom: 20px; /* Espacio entre el encabezado y el contenido */
+  font-size: 30px;
+  margin-bottom: 20px;
 }
 
 .content {
   flex: 1;
-  overflow-y: auto; /* Añadir desplazamiento vertical si el contenido es demasiado grande */
-  padding-right: 20px; /* Espacio a la derecha para el scroll */
+  overflow-y: auto;
+  padding-right: 20px;
 }
 
 .footer {
-  text-align: center; /* Centrar el texto */
-  padding: 10px 0; /* Espacio interno */
-  margin-top: auto; /* Empujar el footer al final del contenedor */
+  text-align: center;
+  padding: 10px 0;
+  margin-top: auto;
 }
 
 .footer p {
-  margin: 0; /* Eliminar el margen predeterminado del párrafo */
+  margin: 0;
 }
 
 .footer a {
-  color: blue; /* Color del enlace */
+  color: blue;
 }
