@@ -5,7 +5,9 @@
         <apx-chart
           [series]="chartTemperature.series"
           [chart]="chartTemperature.chart"
-          [colors]="chartTemperature.colors">
+          [dataLabels]="chartTemperature.dataLabels"
+          [colors]="chartTemperature.colors"
+          [xaxis]="chartTemperature.xaxis">
         </apx-chart>
       </div>
       <div class="chart-container">
@@ -13,15 +15,19 @@
         <apx-chart
           [series]="chartHumidity.series"
           [chart]="chartHumidity.chart"
-          [colors]="chartHumidity.colors">
+          [dataLabels]="chartHumidity.dataLabels"
+          [colors]="chartHumidity.colors"
+          [xaxis]="chartHumidity.xaxis">
         </apx-chart>
       </div>
       <div class="chart-container">
         <h4>UV Index</h4>
         <apx-chart
-          [series]="chartUV.series"
-          [chart]="chartUV.chart"
-          [colors]="chartUV.colors">
+          [series]="chartSunlight.series"
+          [chart]="chartSunlight.chart"
+          [dataLabels]="chartSunlight.dataLabels"
+          [colors]="chartSunlight.colors"
+          [xaxis]="chartSunlight.xaxis">
         </apx-chart>
       </div>
     </mat-card-content>

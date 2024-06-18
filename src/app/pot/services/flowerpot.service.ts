@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment.development';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError, retry, throwError } from 'rxjs';
-import { FlowerpotResponse } from '../models/flowerpot.model';
+import { FlowerpotResponse, SensorResponse } from '../models/flowerpot.model';
 
 @Injectable({
   providedIn: 'root'
@@ -41,6 +41,24 @@ export class FlowerpotService {
   getFlowerpotByCode(code: string): Observable<FlowerpotResponse> {
     return this.http
       .post<FlowerpotResponse>(`${this.baseUrl}/code`, code, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
+  getTemperatureSensors(flowerpotId: number): Observable<SensorResponse[]> {
+    return this.http
+      .get<SensorResponse[]>(`${this.baseUrl}/${flowerpotId}/temperature/sensors`)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
+  getHumiditySensors(flowerpotId: number): Observable<SensorResponse[]> {
+    return this.http
+      .get<SensorResponse[]>(`${this.baseUrl}/${flowerpotId}/humidity/sensors`)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
+  getSunlightSensors(flowerpotId: number): Observable<SensorResponse[]> {
+    return this.http
+      .get<SensorResponse[]>(`${this.baseUrl}/${flowerpotId}/sunlight/sensors`)
       .pipe(retry(2), catchError(this.handleError));
   }
 }

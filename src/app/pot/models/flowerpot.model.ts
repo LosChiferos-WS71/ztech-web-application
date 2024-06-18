@@ -14,3 +14,15 @@ export interface FlowerpotResponse {
     lastHumidity: number,
     lastSunlight: number
 }
+
+export enum SensorType {
+    TEMPERATURE = 'TEMPERATURE',
+    HUMIDITY = 'HUMIDITY',
+    SUNLIGHT = 'SUNLIGHT'
+}
+
+export interface SensorResponse {
+    sensorType: SensorType;
+    value: number;
+    timestamp: string;
+}

@@ -23,3 +23,7 @@ h4{
   color: red;
   margin-right: 10px;
 }
+
+.apexcharts-xaxis-label tspan {
+  white-space: pre;
+}
