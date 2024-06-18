@@ -29,6 +29,6 @@ export class CardFlowerpotComponent implements OnInit{
   }
 
   navigateToDetail() {
-    this.router.navigate(['/flowerpot/detail']);
+    this.router.navigate(['/flowerpot/detail', this.flowerpotId]);
   }
 }

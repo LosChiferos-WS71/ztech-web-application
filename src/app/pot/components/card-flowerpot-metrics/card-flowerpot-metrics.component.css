@@ -8,37 +8,37 @@ mat-icon {
 
 /* Clases para los colores basados en los valores */
 .temperature-low {
-  color: blue;
+  color: #428BCA;
 }
 
 .temperature-medium {
-  color: green;
+  color: #5CAB5F;
 }
 
 .temperature-high {
-  color: red;
+  color: #D14949;
 }
 
 .humidity-low {
-  color: blue;
+  color: #428BCA;
 }
 
 .humidity-medium {
-  color: green;
+  color: #5CAB5F;
 }
 
 .humidity-high {
-  color: red;
+  color: #D14949;
 }
 
 .sunlight-low {
-  color: blue;
+  color: #428BCA;
 }
 
 .sunlight-medium {
-  color: green;
+  color: #5CAB5F;
 }
 
 .sunlight-high {
-  color: red;
+  color: #D14949;
 }

@@ -36,8 +36,8 @@ export const routes: Routes = [
     { path: 'loaded/plant', component: LoadedPlantComponent, ...canActivate(redirectUnauthorizedToLogin) },
     { path: 'configuration/flowerpot', component: ConfigurationFlowerpotComponent, ...canActivate(redirectUnauthorizedToLogin) },
     { path: 'loaded/pot', component: LoadedPotComponent, ...canActivate(redirectUnauthorizedToLogin) },
-    { path: 'flowerpot/detail', component: FlowerpotDetailComponent, ...canActivate(redirectUnauthorizedToLogin) },
-    { path: 'flowerpot/metrics', component: FlowerpotMetricsComponent, ...canActivate(redirectUnauthorizedToLogin) },
+    { path: 'flowerpot/detail/:id', component: FlowerpotDetailComponent, ...canActivate(redirectUnauthorizedToLogin) },
+    { path: 'flowerpot/metrics/:id', component: FlowerpotMetricsComponent, ...canActivate(redirectUnauthorizedToLogin) },
     { path: 'plant/view', component: ViewPlantComponent, ...canActivate(redirectUnauthorizedToLogin) },
     { path: 'plant/detail/:id', component: PlantDetailComponent, ...canActivate(redirectUnauthorizedToLogin) },
 ];

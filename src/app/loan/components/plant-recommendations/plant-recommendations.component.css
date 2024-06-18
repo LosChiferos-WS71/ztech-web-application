@@ -1,85 +1,80 @@
 mat-card {
-    background: rgb(204, 204, 204);
-    color: black;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-radius: 0 20px 20px 0;
-    font-family: 'Arial', sans-serif;
-    height: 540px;
-    width: 700px;
+  background: #EDEDED; /* Color de fondo más claro */
+  color: black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0 20px 20px 0;
+  height: 540px; /* Mantener la altura inicial */
+  width: 700px; /* Mantener el ancho inicial */
+  padding: 20px; /* Espacio interior */
+}
 
-  }
-  
 mat-card-header {
-    background-color: rgb(204, 204, 204);;
-    margin: 20px;
-    
-
+  margin-bottom: 20px;
 }
 
 mat-card-title {
-  font-size: 40px;
+  font-size: 30px; /* Tamaño de fuente ajustado */
   font-weight: bold;
+  color: black; /* Color del título */
 }
 
 mat-card-content {
-  margin-top: 2%;
+  margin-top: 20px;
 }
 
-mat-list-item {
+.recommendation {
   display: flex;
   align-items: center;
-  font-size: 14px;
-  margin-bottom: 30px;
-  line-height: 1.5; /* Espaciado entre líneas para mejor legibilidad */
+  font-size: 14px; /* Tamaño de fuente inicial */
+  margin-bottom: 20px;
+  line-height: 1.5;
+  padding: 10px; /* Espacio interior para las recomendaciones */
+  border-radius: 10px; /* Bordes redondeados */
+}
 
+.low-recommendation {
+  background-color: rgba(173, 216, 230, 0.5); /* Fondo rojo claro */
+  color: black; /* Texto rojo oscuro */
+}
+
+.normal-recommendation {
+  background-color: rgba(144, 238, 144, 0.5); /* Fondo amarillo claro */
+  color: black; /* Texto amarillo oscuro */
+}
+
+.high-recommendation {
+  background-color: rgba(255, 99, 71, 0.5); /* Fondo verde claro */
+  color: black; /* Texto verde oscuro */
 }
 
 mat-icon {
-  font-size: 20px;
-  margin-right: 10px;
+  font-size: 24px; /* Tamaño de los iconos */
+  margin-right: 15px; /* Espacio entre el icono y el texto */
 }
-.error{
-  color: red;
- 
-}
-.warning{
-  color: yellow;
-  
-}
-.eco{
-  color: green  ;
- 
-}
+
 button[mat-raised-button] {
   margin-right: 8px;
   margin-top: 20px;
+  height: 50px; /* Altura de los botones */
+  width: 150px; /* Ancho de los botones */
+  border-radius: 10px; /* Bordes redondeados para los botones */
+  font-weight: bold;
+  font-size: 16px; /* Tamaño de fuente ajustado */
 }
 
 button[color="primary"] {
-  background-color: #165A3A; /* Green */
-  height: 70px;
-  width: 180px;
-  border-radius: 20px;
+  background-color: #165A3A;
   color: white;
-  font-weight: bold;
-  font-size: 20px;
 }
 
 button[color="accent"] {
-  background-color: #F54848; /* Red */
-  height: 70px;
-  width: 180px;
-  border-radius: 20px;
+  background-color: #F54848;
   color: white;
-  font-weight: bold;
-  font-size: 20px;
-
 }
 
-.button-list{
+.button-list {
   display: flex;
   justify-content: center;
   margin-top: 20px;
-  gap: 30px; /* Espacio entre los componentes */
-
+  gap: 30px;
 }

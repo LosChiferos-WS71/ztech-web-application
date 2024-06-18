@@ -1,23 +1,23 @@
 <mat-card>
   <mat-card-content>
     <div class="plant-image-container">
-      <img class="image-plant" src="https://content.elmueble.com/medio/2019/03/25/monstera_f97f4746_800x800.jpg">
+      <img class="image-plant" [src]="flowerpotAssignment.photo">
     </div>
     <div class="status-indicators">
       <div>
-        <mat-icon [ngStyle]="{'color': getColor(values.temperature)}">thermostat</mat-icon>
-        <span [ngStyle]="{'color': getColor(values.temperature)}">{{ values.temperature }}°</span>
-        <span [ngStyle]="{'color': getColor(values.temperature)}">High</span>
+        <mat-icon [ngStyle]="{'color': getTemperatureClass()}">thermostat</mat-icon>
+        <span [ngStyle]="{'color': getTemperatureClass()}">{{ flowerpot.lastTemperature }}°C</span>
+        <span [ngStyle]="{'color': getTemperatureClass()}">{{temperatureIndicator}}</span>
       </div>
       <div>
-        <mat-icon [ngStyle]="{'color': getColor(values.humidity)}">opacity</mat-icon>
-        <span [ngStyle]="{'color': getColor(values.humidity)}">{{ values.humidity }}%</span>
-        <span [ngStyle]="{'color': getColor(values.humidity)}">High</span>
+        <mat-icon [ngStyle]="{'color': getHumidityClass()}">opacity</mat-icon>
+        <span [ngStyle]="{'color': getHumidityClass()}">{{ flowerpot.lastHumidity }}%</span>
+        <span [ngStyle]="{'color': getHumidityClass()}">{{humidityIndicator}}</span>
       </div>
       <div>
-        <mat-icon [ngStyle]="{'color': getColor(values.uv)}">wb_sunny</mat-icon>
-        <span [ngStyle]="{'color': getColor(values.uv)}">{{ values.uv }} UV</span>
-        <span [ngStyle]="{'color': getColor(values.uv)}">High</span>
+        <mat-icon [ngStyle]="{'color': getSunlightClass()}">wb_sunny</mat-icon>
+        <span [ngStyle]="{'color': getSunlightClass()}">{{ flowerpot.lastSunlight }} UV</span>
+        <span [ngStyle]="{'color': getSunlightClass()}">{{sunlightIndicator}}</span>
       </div>
     </div>
   </mat-card-content>
