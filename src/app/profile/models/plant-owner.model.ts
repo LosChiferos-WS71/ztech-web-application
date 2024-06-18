@@ -17,6 +17,6 @@ export interface PlantOwnerResponse {
     phone: number,
     photo: string,
     dni: number,
-    birthday: string,
+    birthday: Date,
     gender: string
 }

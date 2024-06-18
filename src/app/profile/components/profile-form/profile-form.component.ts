@@ -29,10 +29,15 @@ export class ProfileFormComponent implements OnInit{
   ngOnInit(): void {
     this.plantOwnerService.getPlantOwnerByEmail(this.authService.getUser()?.email).subscribe(
       (response) => {
+        console.log(response);
         this.name = response.name;
         this.email = response.email;
         this.address = response.address;
-        this.birthday = this.formatDateToDisplay(response.birthday);
+        if (response.birthday == null) {
+          this.birthday = '';
+        } else {
+          this.birthday = this.formatDateToDisplay(response.birthday);
+        }
         if (response.gender == "male") {
           this.gender = "Male";
         } else if (response.gender == "female") {
@@ -45,7 +50,7 @@ export class ProfileFormComponent implements OnInit{
         } else {
           this.phone = response.phone.toString();
         }
-        if (response.photo == null || response.photo == '') {
+        if (response.photo == "" || response.photo == null) {
           this.photo = "../../../assets/profile/profile-icon.png";
         } else {
           this.photo = response.photo;
@@ -54,17 +59,11 @@ export class ProfileFormComponent implements OnInit{
     );
   }
 
-  formatDateToDisplay(dateString: string): string {
-    const parts = dateString.split('-');
-
-    if (parts.length !== 3) {
-      console.error('Invalid date format');
-      return dateString;
-    }
-
-    const year = parts[0];
-    const month = parts[1];
-    const day = parts[2];
+  formatDateToDisplay(dateString: Date): string {
+    const date = new Date(dateString);
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
     
     return `${day}/${month}/${year}`;
   }

@@ -44,11 +44,6 @@ export class EditProfileFormComponent implements OnInit{
         this.name = response.name;
         this.email = response.email;
         this.address = response.address;
-        if(response.birthday == null) {
-          this.birthday = '';
-        } else {
-          this.birthday = response.birthday;
-        }
         this.gender = response.gender;
         if (response.phone == 0) {
           this.phone = '';
