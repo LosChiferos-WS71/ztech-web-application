@@ -26,7 +26,7 @@ export class PlantConditionDashboardComponent {
       data: [30, 32, 33, 31, 34, 35, 36]
     }],
     chart: {
-      height: 80,
+      height: 120,
       type: "line"
     },
     colors: ["#FF4560"]
@@ -38,7 +38,7 @@ export class PlantConditionDashboardComponent {
       data: [45, 50, 55, 50, 65, 60, 55]
     }],
     chart: {
-      height: 80,
+      height: 120,
       type: "line"
     },
     colors: ["#00D8B6"]  // Un color diferente para la humedad
@@ -50,7 +50,7 @@ export class PlantConditionDashboardComponent {
       data: [3, 4, 5, 4, 5, 6, 7]
     }],
     chart: {
-      height: 80,
+      height: 120,
       type: "line"
     },
     colors: ["#007BFF"]  // Un color diferente para UV
