@@ -123,7 +123,10 @@ export class PlantConditionDashboardComponent implements OnInit, OnDestroy{
       }],
       chart: {
         height: 120,
-        type: "line"
+        type: "line",
+        zoom: {
+          enabled: false
+        }
       },
       dataLabels: {
         enabled: false
@@ -152,7 +155,10 @@ export class PlantConditionDashboardComponent implements OnInit, OnDestroy{
       }],
       chart: {
         height: 120,
-        type: "line"
+        type: "line",
+        zoom: {
+          enabled: false
+        }
       },
       dataLabels: {
         enabled: false
