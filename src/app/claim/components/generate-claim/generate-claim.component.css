@@ -1,0 +1,90 @@
+.generate-claim-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.generate-claim-form {
+  background-color: #ededed;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.title-container {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.title-container h2 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.title-container h2 span {
+  display: block;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.form-label {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.input-container {
+  position: relative;
+  padding-bottom: 50px;
+}
+
+.input-container input,
+.input-container textarea {
+  width: calc(100% - 24px);
+  padding: 10px;
+  font-size: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-indent: 40px;
+
+}
+
+.input-container mat-icon {
+  position: absolute;
+  top: 12px;
+  left: 15px;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.custom-button {
+  width: 48%;
+  height: 50px;
+  font-size: 16px;
+  border-radius: 25px;
+}
+
+.generate-button {
+  background-color: #276749;
+  color: white;
+}
+
+.cancel-button {
+  background-color: #dc3545;
+  color: white;
+}
