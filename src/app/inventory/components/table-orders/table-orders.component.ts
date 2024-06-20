@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
 import {MatSort} from "@angular/material/sort";
 import {NgForm} from "@angular/forms";
@@ -8,6 +8,8 @@ import { MatIcon } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogAcceptOrderComponent } from '../dialog-accept-order/dialog-accept-order.component';
 
 @Component({
   selector: 'app-table-orders',
@@ -19,7 +21,7 @@ import { MatTableModule } from '@angular/material/table';
 export class TableOrdersComponent implements OnInit {
   @ViewChild('studentForm', {static: false})
   studentForm!: NgForm;
-
+  @Input() name!: string;
   tableData!: any;
   dataSource = new MatTableDataSource<any>();
   displayedColumns: string[] = ['id', 'title', 'date','actions']
@@ -31,7 +33,7 @@ export class TableOrdersComponent implements OnInit {
   @ViewChild(MatSort,{static: true})
   sort!: MatSort;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, public dialog: MatDialog) {}
   
   expandedElementId: number | null = null;
 
@@ -47,8 +49,11 @@ export class TableOrdersComponent implements OnInit {
     this.expandedElementId = null;
   }
   
-  
-  
+  openDialog(): void {
+    this.dialog.open(DialogAcceptOrderComponent, {
+      width: '350px',
+    });
+  }
   
   ngOnInit(): void {
     this.dataSource.paginator = this.paginator;

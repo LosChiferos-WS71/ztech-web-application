@@ -24,7 +24,7 @@
         <th mat-header-cell *matHeaderCellDef> Actions</th>
         <td mat-cell *matCellDef="let element">
           <div class="button-container">
-            <button class="action-button-close" mat-icon-button (click)="toggleDetail(element.id)">
+            <button class="action-button-close" mat-icon-button (click)="openDialog()">
               <mat-icon>close</mat-icon>
             </button>
             <button class="action-button-add" mat-icon-button (click)="toggleDetail(element.id)">
