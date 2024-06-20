@@ -66,7 +66,7 @@ export class TableHistoryComponent implements OnInit {
   generateSampleData() {
     const sampleData = Array.from({ length: 30 }, (_, index) => ({
       id: index + 1,
-      title: `Title ${index + 1}`,
+      title: `Title Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. ${index + 1}`,
       date: new Date(2020, 0, index + 1).toLocaleDateString('en-US'),
       description: `Description for item ${index + 1}`  // Añadir descripción para cada elemento
 

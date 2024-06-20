@@ -2,12 +2,13 @@ table {
     width: 100%;
   }
   .table-container {
-    background-color: #565656;
+    justify-content: center; /* Centers children vertically */
+    margin-top: 5%;
+    background-color: white;
     border: 2px solid #4CAF50; /* Color de borde verde */
     border-radius: 10px; /* Bordes redondeados */
     overflow: hidden; /* Esconde cualquier contenido que se desborde los bordes redondeados */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional para un efecto elevado */
-    margin: 20px auto; /* Centra el contenedor en la página con margen superior e inferior */
     width: 100%; /* Ajusta esto para asegurar que no afecte los bordes */
     padding: 10px 30px 30px 30px; /* Añadir padding horizontal para evitar que el contenido toque los bordes */
   }
