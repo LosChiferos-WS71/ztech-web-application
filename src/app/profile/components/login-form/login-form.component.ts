@@ -36,6 +36,7 @@ export class LoginFormComponent {
       (response) => {
         this.authService.login({email: this.email, password: this.password})
           .then(() => {
+            //this.router.navigate(['/accepted/orders']);
             this.router.navigate(['/flowerpots/list']);
             this.authService.setUser(response);
           })

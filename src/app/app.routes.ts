@@ -16,7 +16,7 @@ import { FlowerpotDetailComponent } from './public/pages/flowerpot-detail/flower
 import { FlowerpotMetricsComponent } from './public/pages/flowerpot-metrics/flowerpot-metrics.component';
 import { PlantDetailComponent } from './pot/components/plant-detail/plant-detail.component';
 import { ViewPlantComponent } from './public/pages/view-plant/view-plant.component';
-
+import { AcceptedOrdersComponent } from './public/pages/accepted-orders/accepted-orders.component';
 import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
@@ -40,4 +40,6 @@ export const routes: Routes = [
     { path: 'flowerpot/metrics/:id', component: FlowerpotMetricsComponent, ...canActivate(redirectUnauthorizedToLogin) },
     { path: 'plant/view', component: ViewPlantComponent, ...canActivate(redirectUnauthorizedToLogin) },
     { path: 'plant/detail/:id', component: PlantDetailComponent, ...canActivate(redirectUnauthorizedToLogin) },
+    { path: 'accepted/orders', component: AcceptedOrdersComponent, ...canActivate(redirectUnauthorizedToLogin) },
+
 ];

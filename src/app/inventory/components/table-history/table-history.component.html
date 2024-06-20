@@ -1,0 +1,50 @@
+<div class="table-container">
+    <form (submit)="onSubmit()" #studentForm="ngForm">
+      <ng-container *ngIf="isEditMode; else elseTemplate"></ng-container>&nbsp;
+      <ng-template #elseTemplate></ng-template>
+    </form>
+
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8"> 
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id. </th>
+        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+      </ng-container>
+        
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef> Title </th>
+        <td mat-cell *matCellDef="let element">{{ element.title }}</td>
+      </ng-container>
+      
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+        <td mat-cell *matCellDef="let element">{{ element.date }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions</th>
+        <td mat-cell *matCellDef="let element">
+          <div class="button-container">
+            <button mat-icon-button (click)="toggleDetail(element.id)">
+              <mat-icon>visibility</mat-icon>
+            </button>
+          </div>
+          <!-- Fondo oscuro -->
+          <div *ngIf="element.id === expandedElementId" class="backdrop" (click)="closeDetail()"></div>
+          <!-- Contenedor de detalles que aparece centrado -->
+          <div *ngIf="element.id === expandedElementId" class="modal-details">
+            <div class="modal-content">
+              <button class="close-button" (click)="closeDetail()">&times;</button>
+              <p><strong>Title:</strong> {{ element.title }}</p>
+              <p><strong>Date:</strong> {{ element.date }}</p>
+              <p><strong>Description:</strong> {{ element.description }}</p>
+            </div>
+          </div>
+        </td>
+      </ng-container>
+      
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
+  </div>

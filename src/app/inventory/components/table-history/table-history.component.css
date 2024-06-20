@@ -1,0 +1,92 @@
+table {
+    width: 100%;
+  }
+  .table-container {
+    background-color: #565656;
+    border: 2px solid #4CAF50; /* Color de borde verde */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Esconde cualquier contenido que se desborde los bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional para un efecto elevado */
+    margin: 20px auto; /* Centra el contenedor en la página con margen superior e inferior */
+    width: 100%; /* Ajusta esto para asegurar que no afecte los bordes */
+    padding: 10px 30px 30px 30px; /* Añadir padding horizontal para evitar que el contenido toque los bordes */
+  }
+ 
+  
+  a.mat-raised-button {
+    min-width: 40px; /* Asegura un tamaño mínimo para el botón */
+    padding: 10px; /* Espaciado dentro del botón */
+    line-height: 0; /* Ajusta la línea para iconos, si es necesario */
+    box-shadow: none; /* Elimina la sombra por defecto de los botones Material */
+  }
+  
+  /* Centra el contenido en las celdas de encabezado y las celdas de datos */
+th, td {
+    text-align: center; /* Alinea el texto al centro */
+    vertical-align: middle; /* Alinea verticalmente el contenido en el medio */
+  }
+  
+mat-icon{
+    cursor: pointer;
+    justify-content: center;
+    text-align: center;
+}
+.details {
+    background-color: #f5f5f5;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+  }
+  
+  
+
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+
+
+  .backdrop {
+    position: fixed; /* Posición fija en toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparencia con negro para oscurecer */
+    z-index: 5; /* Asegúrate de que cubra el contenido pero esté bajo el modal */
+  }
+  
+  .modal-details {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    z-index: 10; /* Más alto que el backdrop para que aparezca encima */
+    padding: 20px;
+  }
+  
+  
+  .modal-content {
+    position: relative;
+    padding: 20px;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  
+  .button-container {
+    text-align: center;
+  }
+  
