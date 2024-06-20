@@ -1,0 +1,13 @@
+<!-- src/app/components/order-list-table/order-list-table.component.html -->
+<div class="title">TITLE</div>
+<ul>
+  <li *ngFor="let order of orders">
+    <div class="order-description">{{ order.description }}</div>
+    <div class="buttons">
+      <button class="delete" (click)="onDelete(order.id)">Delete</button>
+      <button class="edit">Edit</button>
+      <button class="detail">Detalle</button>
+    </div>
+  </li>
+</ul>
+<button class="new-order">New order</button>
