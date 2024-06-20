@@ -84,3 +84,26 @@ mat-icon{
     text-align: center;
   }
   
+  .action-button-close {
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #C83E3E;
+    border: none;
+    border-radius: 7px;
+  }
+
+  .action-button-add {
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #276749;
+    border: none;
+    border-radius: 7px;
+  }
+
+  .action-button-visibility {
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #3F50E8;
+    border: none;
+    border-radius: 7px;
+  }
