@@ -57,7 +57,6 @@ export class LoginFormComponent {
         this.signedInUserId.next(response.id);
         this.signedInUsername.next(response.email);
         localStorage.setItem('token', response.token);
-        console.log(`Signed in as ${response.email} with token ${response.token}`);
         this.authService.login({email: this.email, password: this.password})
           .then(() => {
             this.authService.setUser(response);

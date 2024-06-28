@@ -66,7 +66,6 @@ export class AuthenticationService {
    * @returns - The sign-in response containing the user id, username, and token
    */
   signIn(signInRequest: SignInRequest) {
-    console.log(signInRequest);
     return this.http.post<SignInResponse>(`${this.basePath}authentication/sign-in`, signInRequest, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
