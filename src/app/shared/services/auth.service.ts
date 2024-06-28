@@ -59,7 +59,7 @@ export class AuthService {
   forgotPassword(email: string) {
     return sendPasswordResetEmail(this.auth, email).then(() => {
       this.router.navigate(['/recover/password/confirmation', "valid"]);
-    }).catch((error) => { 
+    }).catch((error) => {
       return error.message;
     });
   }
@@ -73,6 +73,7 @@ export class AuthService {
     localStorage.removeItem(this.currentUserKey);
     localStorage.removeItem(this.currentflowerpotId);
     localStorage.removeItem(this.currentplantTypeId);
+    localStorage.removeItem('token');
     return signOut(this.auth);
   }
 }
