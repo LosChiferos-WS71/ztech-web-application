@@ -12,6 +12,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { PlantOwnerService } from '../../services/plant-owner.service';
 import { PlantOwnerRequest } from '../../models/plant-owner.model';
 import { AuthService } from '../../../shared/services/auth.service';
+import { SignUpRequest } from '../../../iam/model/sign-up.request';
+import { AuthenticationService } from '../../../iam/services/authentication.service';
 
 @Component({
   selector: 'app-register-form',
@@ -27,7 +29,7 @@ export class RegisterFormComponent {
   password: string = '';
   errorMessage: string = '';
 
-  constructor(private router: Router, private authService: AuthService , private plantOwnerService: PlantOwnerService) {}
+  constructor(private router: Router, private authService: AuthService , private plantOwnerService: PlantOwnerService, private authenticationService: AuthenticationService) {}
 
   togglePasswordVisibility(input: HTMLInputElement): void {
     input.type = this.hide ? 'text' : 'password';
@@ -45,24 +47,27 @@ export class RegisterFormComponent {
       birthday: "",
       gender: ""
     };
-
-    this.plantOwnerService.createPlantOwner(plantOwnerRequest).subscribe(
-      () => {
+    console.log(`Entrando`);
+    const signUpRequest = new SignUpRequest(this.email, this.name, "", 0, "", 0, "", "", "");
+    this.authenticationService.signUp(signUpRequest).subscribe( {
+      next: (response) => {
+        console.log(`Signed up as ${response.email} with id ${response.id}`);
         this.authService.register({email: this.email, password: this.password})
           .then(() => {
+
+            console.log(`Registered as ${this.email}`);
             this.router.navigate(['/login']);
+
           })
           .catch(error => {
             this.errorMessage = error.message;
             console.error(error);
           });
       },
-      error => {
-        if (error.status === 400 && error.message === "Plant owner with same email already exists") {
-          this.errorMessage = "Account with same email already exists";
-        }
-        console.error(error);
+      error: (error) => {
+        console.error(`Error while signing up: ${error}`);
+        //this.router.navigate(['/register']).then();
       }
-    );
+    });
   }
 }
